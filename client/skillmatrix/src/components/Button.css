@@ -1,0 +1,9 @@
+#register {
+    background-color: rgb(49, 49, 211);
+    color: white;
+    border: 1px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100px;
+    height: 40px;
+}
