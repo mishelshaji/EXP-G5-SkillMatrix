@@ -1,0 +1,45 @@
+.table-wrapper {
+    margin: 10px 70px 70px;
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.2);
+    height: auto;
+    width: 50vw;
+}
+
+.user-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: rgb(244, 240, 240);
+}
+
+.user-table td,
+.user-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.user-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.user-table thead th {
+    color: #f5f5f5;
+    background: #d3cbc7;
+}
+
+
+.user-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #8fbbf4;
+}
+
+.user-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
