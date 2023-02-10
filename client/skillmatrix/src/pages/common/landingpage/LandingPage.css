@@ -1,4 +1,4 @@
-img{
+img {
     width: 40vw;
     height: 80vh;
 }
@@ -103,7 +103,6 @@ p {
     letter-spacing: .1em;
 }
 
-/*Hover*/
 .card:hover::after {
     opacity: 0;
 }
@@ -117,19 +116,18 @@ p {
     margin-top: 50px;
     display: flex;
 }
-.about-content
-{
+
+.about-content {
     display: flex;
-    
 }
-.about-text
-{
+
+.about-text {
     margin-top: 10vh;
     margin-left: 20px;
 }
-.empower-img
-{
+
+.empower-img {
     width: 45vw;
-    height:60vh;
+    height: 60vh;
     border-radius: 10px;
 }

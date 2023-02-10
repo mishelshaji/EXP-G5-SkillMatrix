@@ -5,7 +5,6 @@ import LandingPage from "./pages/common/landingpage/LandingPage.js";
 
 function App() {
   return (
-    //  <Home/> 
     <div>
       <Navbar />
       <LandingPage />

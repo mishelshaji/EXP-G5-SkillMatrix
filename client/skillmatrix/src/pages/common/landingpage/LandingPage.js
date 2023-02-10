@@ -2,6 +2,7 @@ import React from "react"
 import '../landingpage/LandingPage.css'
 import greenoffice from '../../../images/greenoffice.jpg'
 import office from '../../../images/office.jpg'
+
 function LandingPage() {
     return (
         <div>
@@ -57,7 +58,7 @@ function LandingPage() {
                                 track skill levels throughout your company or in a single department.  </p>
                             <p> A skills matrix empowers your HR and learning and development team by offering a simple framework to improve productivity
                                 and resource allocation within the company. The data from the matrix can help guide decisions related to hiring, promotions,
-                                and talent development like upskilling and reskilling</p>
+                                and talent development like upskilling and reskilling.</p>
                         </div>
                     </div>
                 </div>
