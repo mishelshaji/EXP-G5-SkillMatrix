@@ -1,10 +1,9 @@
-import React from "react";
-import Home from './pages/user/UserHome.js'
+import React from 'react';
+import Login from './pages/common/Login.js';
 
 function App() {
   return (
-     <Home/> 
+      <Login/>
   );
 }
-
 export default App;

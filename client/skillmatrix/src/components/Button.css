@@ -1,29 +1,8 @@
-#edit {
-    background-color: rgb(49, 49, 211);
+#login {
+    background-color: black;
     color: white;
-    border: 1px;
     border-radius: 5px;
-    font-size: 12px;
-    width: 70px;
-    height: 30px;
-}
-
-#delete {
-    background-color: rgb(226, 56, 58);
-    color: white;
-    border: 1px;
-    border-radius: 5px;
-    font-size: 12px;
-    width: 70px;
-    height: 30px;
-}
-
-#add{
-    background-color: rgb(56, 226, 62);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 10px;
-    width: 90px;
-    height: 30px;
+    font-size: 15px;
+    width: 260px;
+    height: 35px;
 }
