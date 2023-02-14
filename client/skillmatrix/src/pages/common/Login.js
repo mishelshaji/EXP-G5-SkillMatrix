@@ -9,10 +9,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 function LoginHandler() {
     const schema = yup.object().shape({
-        email: yup.string().email("* Enter valid email").required("* Email is required"),
-        password: yup.string().min(4,"* Password must be at least 4 characters").max(8,"* Password must be at most 8 characters")
+        email: yup.string().email('* Enter valid email').required('* Email is required'),
+        password: yup.string().min(4,'* Password must be at least 4 characters').max(8,'* Password must be at most 8 characters')
         .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-            "* Password must be of at least 8 alphanumeric character").required("* Password is required")
+            '* Password must be of at least 8 alphanumeric character').required('* Password is required')
     });
     const { handleSubmit, register, formState: { errors } } = useForm({
         resolver: yupResolver(schema)

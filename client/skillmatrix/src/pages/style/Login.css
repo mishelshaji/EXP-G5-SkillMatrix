@@ -45,10 +45,12 @@
     background-repeat: no-repeat;
     background-origin: border-box;
 }
-h5{
-    color :rgb(250, 7, 7)
+
+h5 {
+    color: rgb(250, 7, 7)
 }
-img{
+
+img {
     height: 95vh;
     width: 40vw;
 }
