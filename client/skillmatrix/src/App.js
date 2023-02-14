@@ -1,9 +1,9 @@
 import React from 'react';
-import Login from './pages/common/Login.js';
+import LoginHandler from './pages/common/Login.js';
 
 function App() {
   return (
-      <Login/>
+      <LoginHandler/>
   );
 }
 export default App;
