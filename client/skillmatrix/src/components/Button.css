@@ -1,6 +1,6 @@
 #edit {
     background-color: rgb(49, 49, 211);
-    color: white;
+    color: rgb(255, 255, 255);
     border: 1px;
     border-radius: 5px;
     font-size: 12px;
@@ -10,7 +10,7 @@
 
 #delete {
     background-color: rgb(226, 56, 58);
-    color: white;
+    color: rgb(255, 255, 255);
     border: 1px;
     border-radius: 5px;
     font-size: 12px;
@@ -19,11 +19,11 @@
 }
 
 #add{
-    background-color: rgb(56, 226, 62);
-    color: white;
+    background-color: rgb(49, 137, 244);
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 10px;
     font-size: 10px;
-    width: 90px;
+    width: 100px;
     height: 30px;
 }
