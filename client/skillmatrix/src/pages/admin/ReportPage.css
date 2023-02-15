@@ -1,0 +1,41 @@
+.adminreport-home {
+  display: flex;
+  background-color: #ECECF8;
+}
+
+.sidebar-component {
+  display: flex;
+
+}
+
+.report-table {
+  background-color: #ffff;
+}
+
+.container {
+  width: 80vw;
+}
+
+.charts {
+  display: flex;
+}
+
+.barchart {
+  margin-top: 16vh;
+}
+
+.piechart {
+  background-color: #ffff;
+  margin-left: 20px;
+  margin-top: 40px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.barchart {
+  background-color: #ffff;
+  margin-left: 20px;
+  margin-top: 40px;
+  align-items: center;
+  border-radius: 10px;
+}
