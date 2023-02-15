@@ -1,8 +1,8 @@
 input {
-    width: 250px;
+    width: 150px;
     height: 25px;
-    border: 5px;
-    background-color: rgb(224, 221, 221);
+    border: 1px;
+    background-color: rgb(212, 212, 206);
     padding: 5px;
     margin-left: 2px;
     margin-right: 10px;
