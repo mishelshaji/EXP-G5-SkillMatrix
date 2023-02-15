@@ -15,14 +15,16 @@ namespace SkillMatrix.Domain.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-
         public DateTime CreatedDate { get; set; }
 
-        [StringLength(50)]
-        public string ModifiedBy { get; set; }
-
         public DateTime ModifiedDate { get; set; }
+
+        public int CreatedById { get; set; }
+
+        public ApplicationUser User { get; set; }
+
+        public int ModifiedById { get; set; }
+
+        public ApplicationUser User1 { get; set; }
     }
 }
