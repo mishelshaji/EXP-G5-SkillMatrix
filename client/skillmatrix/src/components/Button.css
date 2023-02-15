@@ -1,11 +1,10 @@
-#edit {
-    background-color: rgb(49, 49, 211);
+#login {
+    background-color: black;
     color: white;
-    border: 1px;
     border-radius: 5px;
-    font-size: 12px;
-    width: 70px;
-    height: 30px;
+    font-size: 15px;
+    width: 260px;
+    height: 35px;
 }
 
 #delete {
