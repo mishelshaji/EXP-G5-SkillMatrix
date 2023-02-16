@@ -25,18 +25,20 @@ namespace SkillMatrix.Domain.Models
         [StringLength(500)]
         public string Image { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-
         public DateTime CreatedDate { get; set; }
-
-        [StringLength(50)]
-        public string ModifiedBy { get; set; }
 
         public DateTime ModifiedDate { get; set; }
 
         public int CertificateId { get; set; }
 
         public Certificate Certificate { get; set; }
+
+        public int CreatedById { get; set; }
+
+        public ApplicationUser User { get; set; }
+
+        public int ModifiedById { get; set; }
+
+        public ApplicationUser User1 { get; set; }
     }
 }

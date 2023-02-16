@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SkillMatrix.Service
-{
-    internal class GlobalUsings
-    {
-    }
-}
+﻿global using Microsoft.EntityFrameworkCore;
+global using SkillMatrix.Domain.Models;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

@@ -8,33 +8,31 @@ namespace SkillMatrix.Domain.Models
 {
     public class ApplicationUser: IdentityUser
     {
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 
-        public int RoleId { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public Role Role { get; set; }
+        public DateTime ModifiedDate { get; set; }
+
+        public int DesignationId { get; set; }
+
+        public Designation Designation { get; set; }
 
         public int TeamId { get; set; }
 
         public Team Team { get; set; }
 
-        public int BusinessUnitId { get; set; }
+        public BusinessUnit? BusinessUnit { get; set; }
 
-        public BusinessUnit BusinessUnit { get; set; }
-
-        public int LocattionId { get; set; }
+        public int LocationId { get; set; }
 
         public Location Location { get; set; }
 
         public int CreatedBy { get; set; }
 
-        public DateTime CreatedDate { get; set; }
-
-        public int ModifiedBy { get; set;}
-
-        public DateTime ModifiedDate { get; set; }
+        public int ModifiedBy { get; set; }
 
     }
 }

@@ -19,13 +19,13 @@ namespace SkillMatrix.Domain.Models
         [Required]
         public Enum Status { get; set; }
 
-        public int CategoryId { get; set; }
-
-        public Category Category { get; set; }
-
         public DateTime CreatedDate { get; set; }
 
         public DateTime ModifiedDate { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
 
         public int CreatedById { get; set; }
 

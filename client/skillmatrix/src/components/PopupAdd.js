@@ -15,7 +15,6 @@ import {
   Select,
   Options,
   propNames
-
 } from '@chakra-ui/react'
 
 function PopupAdd(props) {

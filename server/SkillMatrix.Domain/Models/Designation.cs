@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SkillMatrix.Domain.Models
 {
-    public class Role
+    public class Designation
     {
         public int Id { get; set; }
 
@@ -21,10 +21,10 @@ namespace SkillMatrix.Domain.Models
 
         public int CreatedById { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public ApplicationUser CreatedBy { get; set; }
 
         public int ModifiedById { get; set; }
 
-        public ApplicationUser User1 { get; set; }
+        public ApplicationUser ModifiedBy { get; set; }
     }
 }
