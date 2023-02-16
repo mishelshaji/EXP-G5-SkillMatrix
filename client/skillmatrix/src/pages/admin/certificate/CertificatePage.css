@@ -37,6 +37,10 @@
 .heading {
     font-weight: bold;
 }
+.right-component ,.admintable-one
+{
+    margin-left: 20vw;
+}
 
 @media only screen and (max-width: 600px) {
     .sidebar {

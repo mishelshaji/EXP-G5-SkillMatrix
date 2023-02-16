@@ -1,23 +1,20 @@
 
 import React from "react";
-import "../admin/CertificatePage.css"
-import Sidebar from "../../components/sidebar/Sidebar";
-import {
-    Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer, Button, color,
+import "../certificate/CertificatePage.css";
+import Sidebar from "../../../components/sidebar/Sidebar";
+import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer, Button, color,
 } from '@chakra-ui/react';
-
-import PopupAdd from "../../components/model/PopupAdd";
-import DropDown from "../../components/model/Dropdown"
+import PopupAdd from "../../../components/model/PopupAdd";
+import DropDown from "../../../components/model/Dropdown"
 
 const CertificateList = () => {
     return (
         <div className="adminlist-home">
             <Sidebar />
-
+            <div classname="right-component">
             <div className="admintable-one">
                 <h2 className="ctable-heading">CertificateTable</h2>
                 {/* CERTIFICATE TABLE */}
-
                 <TableContainer>
                     <Table variant='simple'>
                         <Thead>
@@ -54,7 +51,6 @@ const CertificateList = () => {
                 <div className="add-btn">
                     <PopupAdd element="Add Skill" btnName="Save" header="Add Certificate" value="ceretificate" category="Category"
                         label="Enter Certificate Name"></PopupAdd>
-
                 </div>
                 <h2 className="crequest-heading">Certificate Additional Request</h2>
                 <TableContainer>
@@ -90,6 +86,7 @@ const CertificateList = () => {
                         </Tbody>
                     </Table>
                 </TableContainer>
+            </div>
             </div>
         </div>
     );

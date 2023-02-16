@@ -1,110 +1,74 @@
-import React from "react";
-// import '../../components/Button.css';
-import '../style/Profile.css';
-import '../style/Table.css';
-import Button from "../../components/Button.js";
-import avatar from '../../images/avatar.png';
 
+import React from "react";
+import "../user/UserHome.css";
+import SkillTable from "../../components/table/Skill";
+import { Button } from "@chakra-ui/react";
+import CertificateTable from "../../components/table/Certificate";
+import office from "../../images/office.jpg";
 function Home() {
     return (
-        <div className="profile-main-container">
-            <div className="profile-container">
-                <div className="user-info">
-                    <div className="user-info-details">
-                        <div className="user-avatar">
-                            <img src={avatar} alt="avatarimg" id="avatar"></img>
+       <div>
+                    {/* left profile  */}
+              <div className="user-home">
+                <div className="first-section">
+                    <div className="profile-left">
+                        <div className="profile-div">
+
+                            <img src={office} className="profile-logo"></img>
+                            <div><h3 className="profile-text">Name :</h3></div>
+                            <div><h3 className="profile-text">Email :</h3></div>
+                            <div><h3 className="profile-text">Ph No :</h3></div>
+                            <div><h3 className="profile-text">Location:</h3></div>
+                            <div><h3 className="profile-text">Team :</h3></div>
+                            <div><h3 className="profile-text">Role :</h3></div>
+
                         </div>
-                        <div className="user-personal-details">
-                            <span>Name:</span><br />
-                            <span>Email:</span><br />
-                            <span>Phone No:</span><br />
-                            <span>Business Unit:</span><br />
-                            <span>Team:</span><br />
-                            <span>Role:</span><br />
-                            <span>Location:</span><br />
+                    </div>
+                    {/* right first coolowmn */}
+                    <div className="profile-right">
+                        <div className="table-heading">Skill List</div>
+                        <div className="skilltable-container">
+                            <SkillTable></SkillTable>
                         </div>
-                        <Button id="edit" value="edit"></Button>
+                        <Button ml="55vw" mt="10px" background="aquamarine" h="40px">Add Skill+</Button>
+
+                        <div className="table-heading">Certificate List</div>
+                        <div className="certificatetable-container">
+                            <CertificateTable></CertificateTable>
+                        </div>
+                        <Button ml="53vw" mt="10px" background="aquamarine" h="40px" onClick={alert("Add certificate component need to render ")}>Add Certificate+</Button>
                     </div>
                 </div>
-                <div className="user-skill-details">
-                    <h2>Skills</h2>
-                    <div className="table-wrapper">
-                        <table className="user-table">
-                            <thead>
-                                <tr>
-                                    <th>Sl No. </th>
-                                    <th>Skill</th>
-                                    <th>Category</th>
-                                    <th>Skill type</th>
-                                    <th>Proficiency Level</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td><Button id="edit" value="edit" /><Button id="delete" value="delete" /></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <h2>Certificates</h2>
-                    <div className="table-wrapper">
-                        <table className="user-table">
-                            <thead>
-                                <tr>
-                                    <th>Sl No </th>
-                                    <th>Certificate</th>
-                                    <th>Category</th>
-                                    <th>Issue date</th>
-                                    <th>Expiry date</th>
-                                    <th>Issued Authority</th>
-                                    <th>Certificate image</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td><Button id="edit" value="edit" /><Button id="delete" value="delete" /></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div className="second-section">
+                    <h2 className="second-heading">Skill Matrix Level</h2>
+                    
+                    <div className="card-section">
+                        <div class="card">
+                            <div class="card-details">
+                                <p class="text-title">Beginner</p>
+                                <p class="text-body">Here are the details of the card</p>
+                            </div>
+                            <button class="card-button">More info</button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-details">
+                                <p class="text-title">Intermediate</p>
+                                <p class="text-body">Here are the details of the card</p>
+                            </div>
+                            <button class="card-button">More info</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-details">
+                                <p class="text-title">Professional</p>
+                                <p class="text-body">Here are the details of the card</p>
+                            </div>
+                            <button class="card-button">More info</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="skill-level-definitions">
-                <div className="skill-levels">
-                    <h2>Beginner</h2>
-                    <p>A person has a basic knowledge on the concepts.
-                        Need support or guidance to complete the task.
-                        May not be well- versed with real time implementation.</p>
-                </div>
-                <div className="skill-levels">
-                    <h2>Independent</h2><br></br>
-                    <p>A person has experience in handling things independently.
-                        Good problem solver and able to apply concepts learned.
-                        A good team player in executing deliverables and also support team members in achieving the milestones.</p>
-                </div>
-                <div className="skill-levels">
-                    <h2>Expert</h2>
-                    <p>A person has good level of experience in applying concepts.
-                        Will have good communication skill and able to interact with customers efficiently.
-                        Can have big picture in solving problems with the help of the team members.
-                        Able to forecast and guide the team to achieve the milestones.
-                        Ideally be certified person in the respective domain.</p>
-                </div>
-            </div>
+
         </div>
     )
 }

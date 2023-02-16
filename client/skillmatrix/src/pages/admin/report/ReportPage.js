@@ -1,9 +1,10 @@
 import React from "react";
-import Sidebar from "../../components/sidebar/Sidebar";
-import "../admin/ReportPage.css"
-import PieChart from "../../components/charts/PieChart";
-import PieChartApp from "../../components/charts/PieChart";
-import BarChartApp from "../../components/charts/Barchart";
+import Sidebar from "../../../components/sidebar/Sidebar";
+import "../report/ReportPage.css";
+import PieChart from "../../../components/charts/PieChart";
+import PieChartApp from "../../../components/charts/PieChart";
+import BarChartApp from "../../../components/charts/Barchart";
+
 const ReportList = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const ReportList = () => {
           <Sidebar></Sidebar>
         </div>
         <div className="right-components">
+          <h2 className="chart-heading">Skill Charts</h2>
           <div className="charts">
             <div className="piechart">
               <PieChartApp></PieChartApp>
@@ -20,6 +22,7 @@ const ReportList = () => {
               <BarChartApp></BarChartApp>
             </div>
           </div>
+          <h2 className="report-heading">Skill Category Wise Report</h2>
           <div class="container table-responsive py-5">
             <table class="table table-bordered table-hover report-table">
               <thead class="thead-dark">
@@ -60,11 +63,8 @@ const ReportList = () => {
               </tbody>
             </table>
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }

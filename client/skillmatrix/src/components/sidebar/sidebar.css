@@ -1,11 +1,12 @@
 
 .top
 {
-    background-color: #ffff;
+    background-color: #5344F5;
     /* height: 100vh; */
     width: 13rem;
     height: 120vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    /* position: fixed; */
 }
 .sidenav
 {
@@ -19,11 +20,24 @@
 .logo
 {
     font-weight: bold;
+    padding-bottom: 10px;
 }
 .logo{
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     padding-top: 20px;
+    color: black;
+   
+}
+.logo-div
+{
+    background-color: aliceblue;
+    text-align: center;
+    width: 200px;
+    margin-left:5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    
 }
 .sidebar-links h4{
   margin-left: 8px;
@@ -42,15 +56,18 @@
     display: flex;
     flex-direction: row;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
+    color: white;
 
 }
 .sidebar-links:hover
 {
-    background-color: aqua;
+    background-color: white;
     transition: 1s;
     border-radius: 10px;
     width: 200px;
+    color: black;
+    font-weight: bold;
     
 }
 .sidebar-links

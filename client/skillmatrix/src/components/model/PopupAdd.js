@@ -23,7 +23,7 @@ import {
   const finalRef = React.useRef(null)
   return (
     <>
-      <Button onClick={onOpen} ref={finalRef}>{props.element}</Button>
+      <Button h={props.h} ml={props.ml} mt={props.mt} w={props.w} onClick={onOpen} ref={finalRef}>{props.element}</Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}

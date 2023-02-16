@@ -1,0 +1,33 @@
+.main-container {
+    display: flex;
+}
+
+
+.search-box {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.skillpage-heading {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.search-btn {
+    width: 300px;
+}
+
+.skilltable-content {
+    margin-top: 10vh;
+}
+
+.admin-skilladd {
+    width: 50px;
+}
+
+.request-table {
+    margin-top: 12vh;
+}

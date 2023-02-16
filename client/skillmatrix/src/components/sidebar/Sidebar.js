@@ -11,9 +11,13 @@ const Sidebar = () => {
                     <h2 className="logo"><span className="logo-firsttext">E</span>xperion</h2></div>
                     <div  className="sidenav">
                         
+                       <div  className="sidebar-links">            
+                       <i class="fa-solid fa-house"></i>
+                        <Link to="/admin/home"><h4 onClick={console.log('clicked on sidebar')}>Home</h4></Link>
+                        </div>
                         <div  className="sidebar-links">            
                         <i class="fa-solid fa-user"></i>
-                        <Link to="admin/skilltable"><h4 onClick={console.log('clicked on sidebar')}>Skill Table</h4></Link>
+                        <Link to="/admin/skill"><h4 onClick={console.log('clicked on sidebar')}>Skill Table</h4></Link>
                         </div>
                         <div className="sidebar-links">            
                         <i class="fa-solid fa-file"></i>&nbsp;
@@ -25,11 +29,12 @@ const Sidebar = () => {
                         </div>
                         <div className="sidebar-links">            
                         <i class="fa-solid fa-bug"></i>
-                        <Link to="/admin/reports"><h4>Reports</h4></Link>
+                        <Link to="/admin/report"><h4>Reports</h4></Link>
                         </div>
+
                         <div className="sidebar-links">            
                         <i class="fa-solid fa-address-card"></i>
-                        <h4>About</h4>
+                        <Link to="/admin/about"><h4>About</h4></Link>
                         </div>
                         
                     </div>
