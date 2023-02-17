@@ -33,8 +33,8 @@ function SkillPage() {
                                         <Td>#</Td>
                                         <Td>
                                             <div>
-                                                <Button width="" h="8" background="lightgreen" >Edit</Button>
-                                                <Button width="" h="8" background="red.300" ml="3" >Delete</Button>
+                                                <Button h="8" background="lightgreen" >Edit</Button>
+                                                <Button h="8" background="red.300" ml="3" >Delete</Button>
                                             </div>
                                         </Td>
                                     </Tr>
@@ -60,8 +60,8 @@ function SkillPage() {
                                                 <Td>#</Td>
                                                 <Td>
                                                     <div>
-                                                        <Button width="" h="8" background="lightgreen" >Acept</Button>
-                                                        <Button width="" h="8" background="red.300" ml="3" >Deny</Button>
+                                                        <Button  h="8" background="lightgreen">Acept</Button>
+                                                        <Button  h="8" background="red.300" ml="3" >Deny</Button>
                                                     </div>
                                                 </Td>
                                             </Tr>
@@ -74,7 +74,6 @@ function SkillPage() {
                 </div>
             </div>
         </div>
-
     )
 };
 

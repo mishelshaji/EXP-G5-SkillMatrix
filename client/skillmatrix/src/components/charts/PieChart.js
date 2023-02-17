@@ -14,21 +14,21 @@ import {
 const PieChartApp = () => {
   const data = [
     {
-       name: "Facebook", 
-       users: 20000
-   },
-   { 
+      name: "Facebook",
+      users: 20000
+    },
+    {
       name: "Instagram",
       users: 15000
-   },
-  { 
-      name: "Twiter", 
+    },
+    {
+      name: "Twiter",
       users: 10000
-  },
-  { 
-      name: "Telegram", 
-     users: 50000
-   },
+    },
+    {
+      name: "Telegram",
+      users: 50000
+    },
   ];
 
   return (

@@ -1,9 +1,35 @@
 import React from "react";
+import {useEffect,useState} from 'react'
+import axios from 'axios'
 import "../home/AdminHome.css";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer, } from '@chakra-ui/react';
 
 function AdminHome() {
+    const Skills =[
+        {
+            "skillId": 1,
+            "skillname": "python",
+            "category": "java",
+          },
+          {
+            "skillId": 2,
+            "skillname": "java",
+            "category": "Login",
+          }
+    ]
+    const Certificate=[
+        {
+            "certificateId": 1,
+            "certificatename": "python",
+            "category": "programming",
+          },
+          {
+            "certificateId": 2,
+            "certificatename": "java",
+            "category": "programming",
+          }
+    ]
     return (
         <div>
             <div className="main-container">
@@ -32,11 +58,14 @@ function AdminHome() {
                                     </Tr>
                                 </Thead>
                                 <Tbody>
+                                {Skills.map((i)=>(
                                     <Tr>
-                                        <Td>..</Td>
-                                        <Td>..</Td>
-                                        <Td>..</Td>
+                                        <Td>{i.skillId}</Td>
+                                        <Td>{i.skillname}</Td>
+                                        <Td>{i.category}</Td>
+                                       
                                     </Tr>
+                                     ))}
                                 </Tbody>
                             </Table>
                         </TableContainer>
@@ -50,11 +79,13 @@ function AdminHome() {
                                     </Tr>
                                 </Thead>
                                 <Tbody>
+                                {Certificate.map((i)=>
                                     <Tr>
-                                        <Td>..</Td>
-                                        <Td>..</Td>
-                                        <Td>..</Td>
+                                        <Td>{i.certificateId}</Td>
+                                        <Td>{i.certificatename}</Td>
+                                        <Td>{i.category}</Td>
                                     </Tr>
+                                )}
                                 </Tbody>
                             </Table>
                         </TableContainer>

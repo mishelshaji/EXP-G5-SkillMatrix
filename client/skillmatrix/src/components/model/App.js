@@ -5,7 +5,6 @@ import PopupDelete from './PopupDelete';
 
 function App()
 {
-  
 return (
 <div>
   <PopupAdd element = "sifana" header="Add skill" btnName="Add"/>

@@ -1,6 +1,5 @@
 
 import React from "react";
-// Import Pages and Layout.
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CertificateList from "./pages/admin/certificate/CertificatePage";
@@ -13,7 +12,7 @@ import PageNotFound from "./pages/pagenotfound/PageNotFound";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Routes> 
         <Route path="/" element={<Home />}></Route>
          <Route path="/admin/home" element={<AdminHome/>}></Route>
          <Route path="/admin/certificate" element={<CertificateList/>}></Route>

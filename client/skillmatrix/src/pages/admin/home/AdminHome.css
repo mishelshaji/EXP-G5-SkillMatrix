@@ -3,12 +3,12 @@
 }
 
 .right {
-    background-color: antiquewhite;
+    background-color: rgb(245, 241, 241);
     width: 100%;
 }
 
 .admin-dashboard {
-    background-color: white;
+    background-color: #FEFBE9;
     width: 65vw;
     height: 8vh;
     margin-left: 20px;
@@ -29,7 +29,7 @@
 }
 
 .middle-content {
-    background-color: aquamarine;
+    background-color: rgb(127, 246, 207);
     width: 66vw;
     height: 25vh;
     margin-left: 20px;
@@ -42,7 +42,7 @@
 .middle-two,
 .middle-three {
     width: 200px;
-    background-color: white;
+    background-color: rgb(244, 244, 244);
     margin: 10px;
     margin-left: 20px;
     text-align: center;
