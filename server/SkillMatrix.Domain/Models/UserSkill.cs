@@ -12,12 +12,9 @@ namespace SkillMatrix.Domain.Models
     {
         public int Id { get; set; }
 
-        [Required, NotNull]
-        [StringLength(50)]
-        public string Type { get; set; }
+        public enum Type { Primary = 1, Secondary = 2, Additional = 3 }
 
-        [Required, NotNull]
-        public int Proficiency { get; set; }
+        public enum Proficiency { Beginner = 1, Intermediate = 2, Expert = 3 }
 
         public DateTime CreatedDate { get; set; }
 
@@ -26,13 +23,5 @@ namespace SkillMatrix.Domain.Models
         public int SkillId { get; set; }
 
         public Skill Skill { get; set; }
-
-        public int CreatedById { get; set; }
-
-        public ApplicationUser User { get; set; }
-
-        public int ModifiedById { get; set; }
-
-        public ApplicationUser User1 { get; set; }
     }
 }

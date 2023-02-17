@@ -32,13 +32,5 @@ namespace SkillMatrix.Domain.Models
         public int CertificateId { get; set; }
 
         public Certificate Certificate { get; set; }
-
-        public int CreatedById { get; set; }
-
-        public ApplicationUser User { get; set; }
-
-        public int ModifiedById { get; set; }
-
-        public ApplicationUser User1 { get; set; }
     }
 }

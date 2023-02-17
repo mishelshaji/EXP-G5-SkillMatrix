@@ -16,8 +16,7 @@ namespace SkillMatrix.Domain.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
-        public Enum Status { get; set; }
+        public enum Status { Approved = 1, pending = 2};
 
         public DateTime CreatedDate { get; set; }
 
@@ -27,12 +26,5 @@ namespace SkillMatrix.Domain.Models
 
         public Category Category { get; set; }
 
-        public int CreatedById { get; set; }
-
-        public ApplicationUser User { get; set; }
-
-        public int ModifiedById { get; set; }
-
-        public ApplicationUser User1 { get; set; }
     }
 }

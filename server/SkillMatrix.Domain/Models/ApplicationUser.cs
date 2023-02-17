@@ -24,15 +24,12 @@ namespace SkillMatrix.Domain.Models
 
         public Team Team { get; set; }
 
+        public int BusinessUnitId { get; set; }
+
         public BusinessUnit? BusinessUnit { get; set; }
 
         public int LocationId { get; set; }
 
         public Location Location { get; set; }
-
-        public int CreatedBy { get; set; }
-
-        public int ModifiedBy { get; set; }
-
     }
 }

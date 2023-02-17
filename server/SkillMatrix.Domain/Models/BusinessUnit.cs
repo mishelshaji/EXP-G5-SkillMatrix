@@ -19,13 +19,5 @@ namespace SkillMatrix.Domain.Models
         public DateTime CreatedDate { get; set; }
 
         public DateTime ModifiedDate { get; set; }
-
-        [ForeignKey(nameof(CreatedBy))]
-        public int CreatedById { get; set; }
-        public ApplicationUser CreatedBy { get; set; }
-
-        //[ForeignKey(nameof(ModifiedBy))]
-        //public int ModifiedById { get; set; }
-        //public ApplicationUser ModifiedBy { get; set; }
     }
 }

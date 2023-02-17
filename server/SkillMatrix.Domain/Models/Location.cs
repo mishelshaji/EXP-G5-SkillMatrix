@@ -18,13 +18,5 @@ namespace SkillMatrix.Domain.Models
         public DateTime CreatedDate { get; set; }
 
         public DateTime ModifiedDate { get; set; }
-
-        public int CreatedById { get; set; }
-
-        public ApplicationUser User { get; set; }
-
-        public int ModifiedById { get; set; }
-
-        public ApplicationUser User1 { get; set; }
     }
 }
