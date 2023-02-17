@@ -12,9 +12,9 @@ namespace SkillMatrix.Domain.Models
     {
         public int Id { get; set; }
 
-        public enum Type { Primary = 1, Secondary = 2, Additional = 3 }
+        public StatusType.Type Type { get; set; }
 
-        public enum Proficiency { Beginner = 1, Intermediate = 2, Expert = 3 }
+        public StatusType.Proficiency Proficiency { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

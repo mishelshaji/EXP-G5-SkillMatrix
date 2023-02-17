@@ -16,7 +16,7 @@ namespace SkillMatrix.Domain.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        public enum Status { Approved = 1, Pending = 2 }
+        public StatusType.Status Status { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SkillMatrix.Domain.Types;
 using SkillMatrix.Service.Dto;
 using SkillMatrix.Service.Service;
 using System.Data;
@@ -17,7 +18,7 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
             _service = service;
         }
 
-        [HttpPost("user/rgister")]
+        [HttpPost("user/register")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostUser(UserCreateDto dto)
@@ -45,6 +46,8 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
 
         [Authorize(Roles = "Customer")]
         [HttpGet("profile")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetProfile()
         {
             var id = User.FindFirstValue(ClaimTypes.NameIdentifier);

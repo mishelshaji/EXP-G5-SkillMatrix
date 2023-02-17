@@ -137,8 +137,5 @@ namespace SkillMatrix.Service.Service
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
-
-
     }
 }
