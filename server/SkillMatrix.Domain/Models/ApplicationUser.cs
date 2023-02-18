@@ -26,7 +26,7 @@ namespace SkillMatrix.Domain.Models
 
         public int BusinessUnitId { get; set; }
 
-        public BusinessUnit? BusinessUnit { get; set; }
+        public BusinessUnit BusinessUnit { get; set; }
 
         public int LocationId { get; set; }
 

@@ -29,6 +29,10 @@ namespace SkillMatrix.Domain.Models
 
         public DateTime ModifiedDate { get; set; }
 
+        public string ApplicationUserId { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
+
         public int CertificateId { get; set; }
 
         public Certificate Certificate { get; set; }

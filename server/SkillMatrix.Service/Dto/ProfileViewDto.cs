@@ -8,6 +8,7 @@ namespace SkillMatrix.Service.Dto
 {
     public class ProfileViewDto
     {
+        public string Id { get; set; }
         public string Name { get; set; }
 
         public DateTime DateOfBirth { get; set; }
@@ -16,5 +17,7 @@ namespace SkillMatrix.Service.Dto
 
         public string PhoneNumber { get; set; }
 
+
     }
-}
+
+}    

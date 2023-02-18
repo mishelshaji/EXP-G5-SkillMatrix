@@ -26,12 +26,18 @@ namespace SkillMatrix.Service.Data
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
-        public DbSet<BusinessUnit> BusinessUnit { get; set; }
+        public DbSet<BusinessUnit> BusinessUnits { get; set; }
 
-        public DbSet<Designation> Designation { get; set; }
+        public DbSet<Designation> Designations { get; set; }
 
-        public DbSet<Location> Location { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
-        public DbSet<Team> Team { get; set; }
+        public DbSet<Team> Teams { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Skill> Skills { get; set; }
+
+        public DbSet<UserSkill> UserSkills { get; set; }
     }
 }

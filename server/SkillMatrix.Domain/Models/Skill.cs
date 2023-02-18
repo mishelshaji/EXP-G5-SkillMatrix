@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SkillMatrix.Domain.Types;
 
 namespace SkillMatrix.Domain.Models
 {
@@ -16,7 +17,7 @@ namespace SkillMatrix.Domain.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        public StatusType.Status Status { get; set; }
+        public Status Status { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

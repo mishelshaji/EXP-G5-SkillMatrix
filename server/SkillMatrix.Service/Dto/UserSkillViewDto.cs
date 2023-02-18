@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SkillMatrix.Domain.Types;
 
-namespace SkillMatrix.Domain.Models
+namespace SkillMatrix.Service.Dto
 {
-    public class UserSkill
+    public class UserSkillViewDto
     {
         public int Id { get; set; }
 
-        public SkillType SkillType { get; set; }
+        public SkillType Type { get; set; }
 
         public Proficiency Proficiency { get; set; }
-
-        public DateTime CreatedDate { get; set; }
-
-        public DateTime ModifiedDate { get; set; }
 
         public string ApplicationUserId { get; set; }
 
@@ -29,4 +23,5 @@ namespace SkillMatrix.Domain.Models
 
         public Skill Skill { get; set; }
     }
-}
+
+}    
