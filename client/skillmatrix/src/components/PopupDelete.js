@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import "../pages/style/AdminSkill.css";
 import {
   Modal,
   ModalOverlay,
@@ -8,37 +9,41 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Button
-} from '@chakra-ui/react';
+  Button,
+} from "@chakra-ui/react";
 
 function PopupDelete(props) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
   return (
     <>
-      <Button onClick={onOpen} ref={finalRef}>{props.element}</Button>
-      <Modal initialFocusRef={initialRef}
+      <Button onClick={onOpen} ref={finalRef}>
+        {props.element}
+      </Button>
+      <Modal
+        initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}
-        onClose={onClose}>
+        onClose={onClose}
+      >
         <ModalOverlay />
-        <ModalContent backgroundColor='#000000'>
-          <ModalHeader textColor='#FFFFFF'>
+        <ModalContent className="dmodal-content">
+          <ModalHeader className="dmodal-header">
             delete {props.name}
           </ModalHeader>
-          <ModalCloseButton color='#FFFFFF' />
-          <ModalBody textColor='#FFFFFF' pb={6}>
+          <ModalCloseButton />
+          <ModalBody className="dmodal-header">
             Are you sure You want to delete this {props.name}?
-          </ModalBody >
+          </ModalBody>
           <ModalFooter>
-            <Button colorScheme='red' mr={3}>delete</Button>
+            <Button className="button">delete</Button>
             <Button onClick={onClose}>cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 
 export default PopupDelete;

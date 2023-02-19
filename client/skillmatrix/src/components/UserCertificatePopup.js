@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import "../pages/style/AdminSkill.css";
 import {
   Modal,
   ModalOverlay,
@@ -11,16 +12,19 @@ import {
   Button,
   FormControl,
   FormLabel,
-  Select, Input
-} from '@chakra-ui/react';
+  Select,
+  Input,
+} from "@chakra-ui/react";
 
 function UserCertificatePopup(props) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
   return (
     <>
-      <Button onClick={onOpen} ref={finalRef}>{props.element}</Button>
+      <Button onClick={onOpen} ref={finalRef}>
+        {props.element}
+      </Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -28,45 +32,45 @@ function UserCertificatePopup(props) {
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent backgroundColor="#fff" border="3px" borderColor="solid $blue">
-          <ModalHeader textColor="#000000">Add Certificate</ModalHeader>
-          <ModalCloseButton color='#000000' />
-          <ModalBody pb={6}>
+        <ModalContent className="cmodal-content">
+          <ModalHeader className="cmodal-header">Add Certificate</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
             <FormControl>
-              <FormLabel textColor="#000000">Certificate Name</FormLabel>
-              <Select textColor="#000000" backgroundColor="#FFFFFF">
-                <option value="fop1" >Certificate1</option>
-                <option value="fop2" >Certificate2</option>
-                <option value="fop3" >Certificate3</option>
+              <FormLabel className="cmodal-header">Certificate Name</FormLabel>
+              <Select className="cmodal-select">
+                <option value="fop1">Certificate1</option>
+                <option value="fop2">Certificate2</option>
+                <option value="fop3">Certificate3</option>
               </Select>
             </FormControl>
-            <FormControl mt={4}>
-              <FormLabel textColor="#000000">Issued Authority</FormLabel>
+            <FormControl>
+              <FormLabel className="cmodal-header">Issued Authority</FormLabel>
               <Input type="text" name="IssuedAuthority"></Input>
             </FormControl>
-            <FormControl mt={4}>
-              <FormLabel textColor="#000000">Issued Date</FormLabel>
+            <FormControl>
+              <FormLabel className="cmodal-header">Issued Date</FormLabel>
               <input type="date" name="IssuedDate"></input>
             </FormControl>
-            <FormControl mt={4}>
-              <FormLabel textColor="#000000">Expiry Date</FormLabel>
+            <FormControl>
+              <FormLabel className="cmodal-header">Expiry Date</FormLabel>
               <input type="date" name="ExpiryDate"></input>
             </FormControl>
-            <FormControl mt={4}>
-              <FormLabel textColor="#000000">Image</FormLabel>
+            <FormControl>
+              <FormLabel className="cmodal-header">Image</FormLabel>
               <input type="file" alt="" name="IssuedDate"></input>
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='purple' mr={3}>
-              Add
+            <Button className="cbutton">Add</Button>
+            <Button className="cbutton2" onClick={onClose}>
+              Cancel
             </Button>
-            <Button onClick={onClose} colorScheme='red'>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 
 export default UserCertificatePopup;

@@ -1,11 +1,67 @@
-.head1 {
-    position: relative;
-    top: 140px;
-    left: 350px;
-}
-
 .search {
-    position: relative;
-    top: 100px;
-    left: 850px;
+  margin-left: 580px;
+  width: 1200px;
+}
+.admin-skill-container {
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 100%;
+}
+.maindiv {
+  display: flex;
+}
+.modal-content {
+  background-color: rgb(7, 106, 145);
+}
+.modal-header {
+  color: #ffffff;
+}
+.formlabel {
+  color: #ffffff;
+}
+.select {
+  color: #000000;
+  background-color: #ffffff;
+}
+.button {
+  background-color: rgb(130, 21, 21);
+  margin-right: 7px;
+}
+.dmodal-content{
+    background-Color:#000000;
+}
+.dmodal-header{
+    Color:#FFFFFF;
+}
+.cmodal-content{
+    background-Color: #ffff;
+    border: 3px;
+    border-Color:solid blue;
+}
+.cmodel-header{
+    Color:#000000;
+}
+.cmodal-select{
+    color:#000000;
+    background-Color:#ffff;
+}
+.smodal-content{
+    background-Color: #D7A1F9;   
+}
+.smodal-select{
+    color:#000000;
+    background-Color:#ffff;
+}
+.input{
+  max-Width:15%;
+}
+.button-search{
+  background-color:#38a2d3;
+  margin-Bottom:7px;
+}
+.admin-usertable{
+  max-width: 40%;
+}
+.tr-head{
+  background-color: #808080;
 }

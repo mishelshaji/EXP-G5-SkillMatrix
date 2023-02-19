@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Modal,
   ModalOverlay,
@@ -11,16 +11,19 @@ import {
   Button,
   FormControl,
   FormLabel,
-  Select
-} from '@chakra-ui/react';
+  Select,
+} from "@chakra-ui/react";
+import "../pages/style/AdminSkill.css";
 
 function PopupAdd(props) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
   return (
     <>
-      <Button onClick={onOpen} ref={finalRef}>{props.element}</Button>
+      <Button onClick={onOpen} ref={finalRef}>
+        {props.element}
+      </Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -28,37 +31,35 @@ function PopupAdd(props) {
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent backgroundColor="#000000">
-          <ModalHeader textColor="#FFFFFF">{props.header}</ModalHeader>
-          <ModalCloseButton color='#FFFFFF' />
-          <ModalBody pb={6}>
+        <ModalContent className="modal-content">
+          <ModalHeader className="modal-header">{props.header}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
             <FormControl>
-              <FormLabel textColor="#FFFFFF">Skill Name</FormLabel>
-              <Select textColor="#000000" backgroundColor="#FFFFFF">
-                <option value="cop1" >Java</option>
-                <option value="cop2" >C#</option>
-                <option value="cop3" >.net</option>
+              <FormLabel class="formlabel">Skill Name</FormLabel>
+              <Select class="select">
+                <option value="cop1">Java</option>
+                <option value="cop2">C#</option>
+                <option value="cop3">.net</option>
               </Select>
             </FormControl>
-            <FormControl mt={4}>
-              <FormLabel textColor="#FFFFFF" backgroundColor="#000000">Category</FormLabel>
-              <Select textColor="#000000" backgroundColor="#FFFFFF">
-                <option value="cop1" >language</option>
-                <option value="cop2" >shsdgash</option>
-                <option value="cop3" >hbash</option>
+            <FormControl>
+              <FormLabel class="formlabel">Category</FormLabel>
+              <Select class="select">
+                <option value="cop1">language</option>
+                <option value="cop2">shsdgash</option>
+                <option value="cop3">hbash</option>
               </Select>
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='red' mr={3}>
-              {props.btnName}
-            </Button>
+            <Button className="button">{props.btnName}</Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 
 export default PopupAdd;
