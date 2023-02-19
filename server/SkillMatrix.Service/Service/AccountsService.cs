@@ -102,7 +102,6 @@ namespace SkillMatrix.Service.Service
             {
                 Name = user.Name,
                 Email = user.Email,
-
             };
         }
 

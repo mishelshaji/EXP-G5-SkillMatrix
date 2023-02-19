@@ -17,7 +17,6 @@ namespace SkillMatrix.Service.Dto
 
         public string PhoneNumber { get; set; }
 
-
     }
 
 }    

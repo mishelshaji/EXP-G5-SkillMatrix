@@ -44,7 +44,7 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
             return BadRequest(result.Errors);
         }
 
-        [Authorize(Roles = "Customer")]
+        //[Authorize(Roles = "User")]
         [HttpGet("profile")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -2,7 +2,7 @@
 {
     public enum Status
     {
-        Approved,
-        pending
+        Approved =1,
+        pending =2
     }
 }

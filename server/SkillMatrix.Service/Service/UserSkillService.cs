@@ -29,7 +29,7 @@ namespace SkillMatrix.Service.Service
                 .Select(p => new UserSkillViewDto
                 {
                     Id = p.Id,
-                    Type = p.SkillType,
+                    SkillType = p.SkillType,
                     Proficiency= p.Proficiency,
                     ApplicationUser = new()
                     {
@@ -68,7 +68,7 @@ namespace SkillMatrix.Service.Service
                 Result = new()
                 {
                     Id = userSkill.Id,
-                    Type = userSkill.SkillType,
+                    SkillType = userSkill.SkillType,
                     Proficiency = userSkill.Proficiency,
                     ApplicationUser = new()
                     {
@@ -96,7 +96,7 @@ namespace SkillMatrix.Service.Service
 
             var userSkill = new UserSkill()
             {
-                SkillType= dto.Type,
+                SkillType= dto.SkillType,
                 Proficiency = dto.Proficiency,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,
@@ -109,7 +109,7 @@ namespace SkillMatrix.Service.Service
             result.Result = new()
             {
                 Id = userSkill.Id,
-                Type= userSkill.SkillType,
+                SkillType = userSkill.SkillType,
                 Proficiency = userSkill.Proficiency,
                 ApplicationUser = new()
                 {
@@ -141,14 +141,15 @@ namespace SkillMatrix.Service.Service
                 return null;
 
             userSkill.SkillId = dto.SkillId;
-            userSkill.SkillType = dto.Type;
+            userSkill.SkillType = dto.SkillType;
             userSkill.Proficiency = dto.Proficiency;
+            userSkill.ModifiedDate = DateTime.UtcNow;
 
             await _db.SaveChangesAsync();
 
             result.Result = new UserSkillViewDto
             {
-                Type = userSkill.SkillType,
+                SkillType = userSkill.SkillType,
                 Proficiency = dto.Proficiency,
                 Skill = new()
                 {

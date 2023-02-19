@@ -9,8 +9,8 @@ namespace SkillMatrix.Domain.Types
 
     public enum Proficiency
     {
-        Beginner,
-        Intermediate,
-        Additional
+        Beginner =1,
+        Intermediate =2,
+        Additional =3
     }
 }

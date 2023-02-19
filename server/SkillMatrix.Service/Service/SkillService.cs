@@ -81,7 +81,9 @@ namespace SkillMatrix.Service.Service
             var skill = new Skill()
             {
                 Name = dto.Name,
-                Status = 
+                Status = Status.Approved,
+                CreatedDate = DateTime.UtcNow,
+                ModifiedDate = DateTime.UtcNow,
                 CategoryId = dto.CategoryId,
             };
             _context.Skills.Add(skill);
@@ -91,11 +93,8 @@ namespace SkillMatrix.Service.Service
             {
                 Id = skill.Id,
                 Name = skill.Name,
-                Category = new()
-                {
-                    Id = skill.Category.Id,
-                    Name = skill.Category.Name
-                }
+                Status = skill.Status,
+                Category = null
             };
             return result;
         }
@@ -121,17 +120,14 @@ namespace SkillMatrix.Service.Service
 
             skill.Name = dto.Name;
             skill.CategoryId = dto.CategoryId;
+            skill.ModifiedDate = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
 
             result.Result = new SkillViewDto
             {
                 Name = skill.Name,
-                Category = new() 
-                {
-                    Id = skill.Category.Id,
-                    Name = skill.Category.Name 
-                }
+                Category = null
             };
             return result;
         }

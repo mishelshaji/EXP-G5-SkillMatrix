@@ -11,7 +11,7 @@ namespace SkillMatrix.Service.Dto
     {
         public int Id { get; set; }
 
-        public SkillType Type { get; set; }
+        public SkillType SkillType { get; set; }
 
         public Proficiency Proficiency { get; set; }
 
