@@ -43,28 +43,12 @@ function SkillTable() {
             </Thead>
             <Tbody>
               <Tr>
-                <Td>1</Td>
-                <Td>Sifana ks</Td>
-                <Td>PES</Td>
-                <Td>ABC</Td>
-                <Td>Associate Software engineer</Td>
-                <Td>Kochi</Td>
-              </Tr>
-              <Tr>
-                <Td>2</Td>
-                <Td>Kavitha BS</Td>
-                <Td>PES</Td>
-                <Td>ABC</Td>
-                <Td>Associate Software engineer</Td>
-                <Td>Trivandrum</Td>
-              </Tr>
-              <Tr>
-                <Td>3</Td>
-                <Td>Surabhi</Td>
-                <Td>PES</Td>
-                <Td>ABC</Td>
-                <Td>Associate Software engineer</Td>
-                <Td>Trivandrum</Td>
+                <Td></Td>
+                <Td></Td>
+                <Td></Td>
+                <Td></Td>
+                <Td></Td>
+                <Td></Td>
               </Tr>
             </Tbody>
           </Table>
