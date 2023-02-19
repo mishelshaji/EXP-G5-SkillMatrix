@@ -30,7 +30,7 @@ namespace SkillMatrix.Service.Service
                 {
                     Id = p.Id,
                     SkillType = p.SkillType,
-                    Proficiency= p.Proficiency,
+                    Proficiency = p.Proficiency,
                     ApplicationUser = new()
                     {
                         Id = p.ApplicationUser.Id,
@@ -58,6 +58,7 @@ namespace SkillMatrix.Service.Service
             var userSkill = await _db.UserSkills
                 .Include(m => m.ApplicationUser)
                 .Include(s => s.Skill)
+                .ThenInclude(m => m.Category)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (userSkill is null)
@@ -96,7 +97,7 @@ namespace SkillMatrix.Service.Service
 
             var userSkill = new UserSkill()
             {
-                SkillType= dto.SkillType,
+                SkillType = dto.SkillType,
                 Proficiency = dto.Proficiency,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,
@@ -111,22 +112,7 @@ namespace SkillMatrix.Service.Service
                 Id = userSkill.Id,
                 SkillType = userSkill.SkillType,
                 Proficiency = userSkill.Proficiency,
-                ApplicationUser = new()
-                {
-                    Id = userSkill.ApplicationUser.Id,
-                    Name = userSkill.ApplicationUser.Name
-                },
-                Skill = new()
-                {
-                    Id = userSkill.Skill.Id,
-                    Name = userSkill.Skill.Name,
-                    Category = new()
-                    {
-                        Id = userSkill.Skill.Category.Id,
-                        Name = userSkill.Skill.Category.Name
-                    }
-                    
-                }
+                SkillId = userSkill.SkillId
             };
             return result;
         }
@@ -135,7 +121,7 @@ namespace SkillMatrix.Service.Service
         {
             var result = new ServiceResponse<UserSkillViewDto>();
 
-            // If the product does not exist, return back to controller.
+            // If the skill does not exist, return back to controller.
             var userSkill = await _db.UserSkills.FindAsync(id);
             if (userSkill == null)
                 return null;
@@ -151,24 +137,15 @@ namespace SkillMatrix.Service.Service
             {
                 SkillType = userSkill.SkillType,
                 Proficiency = dto.Proficiency,
-                Skill = new()
-                {
-                    Id = userSkill.Skill.Id,
-                    Name = userSkill.Skill.Name,
-                    Category= new()
-                    {
-                        Id = userSkill.Skill.Category.Id,
-                        Name = userSkill.Skill.Category.Name
-                    }
-                }
-
+                SkillId = dto.SkillId,
+                ApplicationUserId = dto.ApplicationUserId
             };
             return result;
         }
 
         public async Task<ServiceResponse<bool>> DeleteAsync(int id)
         {
-            // If the product does not exist, return back to controller.
+            // If the skill does not exist, return back to controller.
             var userSkill = await _db.UserSkills.FindAsync(id);
             if (userSkill == null)
                 return null;

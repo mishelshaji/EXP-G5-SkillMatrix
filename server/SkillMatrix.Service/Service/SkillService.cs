@@ -22,11 +22,11 @@ namespace SkillMatrix.Service.Service
         {
             var skills = await _context.Skills
                 .Include(m => m.Category)
-                .Select (s => new SkillViewDto
+                .Select(s => new SkillViewDto
                 {
                     Id = s.Id,
                     Name = s.Name,
-                    Status= s.Status,
+                    Status = s.Status,
                     Category = new()
                     {
                         Id = s.Category.Id,

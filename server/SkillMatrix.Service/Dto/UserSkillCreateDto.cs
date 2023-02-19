@@ -9,7 +9,6 @@ namespace SkillMatrix.Service.Dto
 {
     public class UserSkillCreateDto
     {
-        
         public SkillType SkillType { get; set; }
 
         public Proficiency Proficiency { get; set; }

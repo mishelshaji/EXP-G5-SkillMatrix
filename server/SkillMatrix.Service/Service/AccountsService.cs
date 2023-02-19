@@ -47,7 +47,7 @@ namespace SkillMatrix.Service.Service
                 PhoneNumber = dto.PhoneNumber,
                 UserName = Guid.NewGuid().ToString()
             };
-            
+
             var userstatus = await _userManager.CreateAsync(user, dto.Password);
             if (!userstatus.Succeeded)
             {

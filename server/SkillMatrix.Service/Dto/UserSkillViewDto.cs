@@ -24,4 +24,4 @@ namespace SkillMatrix.Service.Dto
         public Skill Skill { get; set; }
     }
 
-}    
+}
