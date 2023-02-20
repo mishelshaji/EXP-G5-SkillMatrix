@@ -5,6 +5,7 @@ import SkillTable from "../../components/table/Skill";
 import { Button } from "@chakra-ui/react";
 import CertificateTable from "../../components/table/Certificate";
 import office from "../../images/office.jpg";
+import UserSkillPopup from "../../components/UserSkillPopup";
 function Home() {
     return (
        <div>
@@ -30,13 +31,13 @@ function Home() {
                         <div className="skilltable-container">
                             <SkillTable></SkillTable>
                         </div>
-                        <Button ml="55vw" mt="10px" background="aquamarine" h="40px">Add Skill+</Button>
+                        <UserSkillPopup ml="53vw" mt="10px" background="aquamarine" h="40px" element="Add Skill"></UserSkillPopup>
 
                         <div className="table-heading">Certificate List</div>
                         <div className="certificatetable-container">
                             <CertificateTable></CertificateTable>
                         </div>
-                        <Button ml="53vw" mt="10px" background="aquamarine" h="40px" onClick={alert("Add certificate component need to render ")}>Add Certificate+</Button>
+                        <Button ml="48vw" mt="10px" background="aquamarine" h="40px">Add Certificate+</Button>
                     </div>
                 </div>
                 <div className="second-section">

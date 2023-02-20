@@ -1,7 +1,3 @@
-.search {
-  margin-left: 580px;
-  width: 1200px;
-}
 
 .admin-skill-container {
   margin-top: 5%;
@@ -13,11 +9,11 @@
   display: flex;
 }
 
-.modal-content {
-  background-color: rgb(7, 106, 145);
+div.modal-content {
+  background-color: #a09fb0;
 }
 
-.modal-header {
+div.modal-header {
   color: #ffffff;
 }
 
@@ -25,22 +21,9 @@
   color: #ffffff;
 }
 
-.select {
+div .select {
   color: #000000;
   background-color: #ffffff;
-}
-
-.button {
-  background-color: rgb(130, 21, 21);
-  margin-right: 7px;
-}
-
-.dmodal-content {
-  background-Color: #000000;
-}
-
-.dmodal-header {
-  Color: #FFFFFF;
 }
 
 .cmodal-content {
@@ -54,15 +37,15 @@
 }
 
 .cmodal-select {
-  color: #000000;
-  background-Color: #ffff;
+  color: #ffffff;
+  background-Color: #000000;
 }
 
-.smodal-content {
-  background-Color: #D7A1F9;
+div .smodal-content {
+  background-Color: #4b4760;
 }
 
-.smodal-select {
+div .smodal-select {
   color: #000000;
   background-Color: #ffff;
 }
@@ -72,7 +55,7 @@
 }
 
 .button-search {
-  background-color: #38a2d3;
+  background-color: #262242;
   margin-Bottom: 7px;
 }
 
@@ -81,5 +64,24 @@
 }
 
 .tr-head {
-  background-color: #808080;
+  background-color: #777a99;
+}
+
+div.button {
+  background-color: #110f46;
+}
+
+.side-table {
+  display: flex;
+
+}
+
+.skill-table {
+  margin-top: 20px;
+}
+
+div .sbutton {
+  background-color: rgb(5, 23, 81);
+  color: #ffffff;
+  margin-right: 10px;
 }
