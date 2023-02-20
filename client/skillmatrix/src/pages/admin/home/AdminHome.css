@@ -1,0 +1,61 @@
+.maincontainer {
+    display: flex;
+}
+
+.right {
+    background-color: rgb(245, 241, 241);
+    width: 100%;
+}
+
+.admin-dashboard {
+    background-color: #FEFBE9;
+    width: 65vw;
+    height: 8vh;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-profile {
+    margin-left: 80px;
+}
+
+.top-content {
+    display: flex;
+}
+
+.middle-content {
+    background-color: rgb(127, 246, 207);
+    width: 66vw;
+    height: 25vh;
+    margin-left: 20px;
+    margin-top: 8vh;
+    display: flex;
+    padding: 10px;
+}
+
+.middle-one,
+.middle-two,
+.middle-three {
+    width: 200px;
+    background-color: rgb(244, 244, 244);
+    margin: 10px;
+    margin-left: 20px;
+    text-align: center;
+
+}
+
+.middle-heading {
+    font-weight: bold;
+    font-size: .8rem;
+    margin-top: 3px;
+}
+
+.dashboard-heading {
+    font-weight: bold;
+}
+
