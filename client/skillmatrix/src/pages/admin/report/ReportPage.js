@@ -12,7 +12,7 @@ const ReportList = () => {
         <div className="sidebar-component">
           <Sidebar></Sidebar>
         </div>
-        <div className="right-components">
+        <div >
           <h2 className="chart-heading">Skill Charts</h2>
           <div className="charts">
             <div className="piechart">
@@ -22,9 +22,9 @@ const ReportList = () => {
               <BarChartApp></BarChartApp>
             </div>
           </div>
-          <h2 className="report-heading">Skill Category Wise Report</h2>
-          <div class="container table-responsive py-5">
-            <table class="table table-bordered table-hover report-table">
+          <h2 className="adminreport-heading">Skill Category Wise Report</h2>
+          <div class="adminreport-container table-responsive py-5">
+            <table class="table table-bordered table-hover admin-report-table">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col" style={{ fontSize: "14px" }}>Category</th>

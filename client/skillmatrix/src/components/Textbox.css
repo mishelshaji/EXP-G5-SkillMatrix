@@ -8,3 +8,10 @@
     margin-right: 10px;
     border-radius: 5px;
 }
+
+.login-textbox {
+    width: 260px;
+    height: 35px;
+    border-radius: 5px;
+
+}

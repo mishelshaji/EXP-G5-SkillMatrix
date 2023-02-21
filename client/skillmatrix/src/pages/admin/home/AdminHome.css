@@ -1,14 +1,10 @@
-.maincontainer {
+.adminpage-main-container {
     display: flex;
-}
 
-.right {
-    background-color: rgb(245, 241, 241);
-    width: 100%;
 }
 
 .admin-dashboard {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     width: 65vw;
     height: 8vh;
     margin-left: 20px;
@@ -20,15 +16,7 @@
     align-items: center;
 }
 
-.admin-profile {
-    margin-left: 80px;
-}
-
-.top-content {
-    display: flex;
-}
-
-.middle-content {
+.admin-dashboard-middle-content {
     background-color: rgb(29, 72, 99);
     width: 66vw;
     height: 25vh;
@@ -38,9 +26,9 @@
     padding: 10px;
 }
 
-.middle-one,
-.middle-two,
-.middle-three {
+.adminhome-middle-one,
+.adminhome-middle-two,
+.adminhome-middle-three {
     width: 200px;
     background-color: #f0f0f0;
     margin: 10px;
@@ -49,13 +37,12 @@
 
 }
 
-.middle-heading {
+.adminhome-middle-heading {
     font-weight: bold;
     font-size: .8rem;
     margin-top: 3px;
 }
 
-.dashboard-heading {
+.admin-dashboard-heading {
     font-weight: bold;
 }
-

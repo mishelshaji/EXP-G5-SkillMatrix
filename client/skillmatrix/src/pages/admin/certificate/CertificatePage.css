@@ -1,5 +1,5 @@
-.ctable-heading,
-.crequest-heading {
+.adminpagectable-heading,
+.certificate-addrequest-heading {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -11,40 +11,25 @@
     border-radius: 10px;
 }
 
-.add-btn {
+.certificatepage-add-button {
     margin: 20px;
 }
 
-.adminlist-home {
+.admincertificatepage-home {
     display: flex;
 }
 
-.admintable-one {
+.admincertificate-pagetable-one {
     top: 0;
     margin-top: 15vh;
     margin-left: 10vw;
 }
 
-.admin-btn {
-    width: 20px;
-
-}
-
-.requesttable {
+.admincertificate-requesttable {
     margin-top: 20px;
 }
 
-.heading {
-    font-weight: bold;
-}
-
-.right-component ,.admintable-one
-{
+.admincertificate-page-right-component,
+.admincertificate-pagetable-one {
     margin-left: 20vw;
-}
-
-@media only screen and (max-width: 600px) {
-    .sidebar {
-        display: none;
-    }
 }

@@ -1,10 +1,10 @@
-.top {
+.sidebar-top {
     background-color: #17134b;
     width: 13rem;
     height: 120vh;
 }
 
-.sidenav {
+.sidebar-sidenav {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,19 +12,19 @@
     margin-top: 70px;
 }
 
-.logo {
+.sidebar-logo {
     font-weight: bold;
     padding-bottom: 10px;
 }
 
-.logo {
+.sidebar-logo {
     font-size: 25px;
     text-align: center;
     padding-top: 20px;
     color: rgb(8, 8, 8);
 }
 
-.logo-div {
+.sidebar-div {
     background-color: rgb(233, 240, 247);
     text-align: center;
     width: 200px;
@@ -33,7 +33,7 @@
     border-radius: 3px;
 }
 
-.sidebar-links h4 {
+.sidebar-links , .sidebar-heading {
     margin-left: 8px;
     font-size: 15px;
 }

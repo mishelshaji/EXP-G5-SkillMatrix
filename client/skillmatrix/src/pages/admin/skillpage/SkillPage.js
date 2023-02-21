@@ -9,11 +9,11 @@ import PopupUpdate from "../../../components/PopupUpdate";
 function SkillPage() {
     return (
         <div>
-            <div className="main-container">
-                <div className="sidebar-component"> <Sidebar></Sidebar></div>
-                <div className="rightside">
-                    <h3 className="skillpage-heading">Skill List</h3>
-                    <div className="skilltable-content">
+            <div className="adminskillpage-main-container">
+                <div> <Sidebar></Sidebar></div>
+                <div className="adminskillpage-rightside">
+                    <h3 className="adminskillpage-heading">Skill List</h3>
+                    <div className="adminskillpagetable-content">
                         <TableContainer>
                             <Table variant='simple'>
                                 <Thead>
@@ -30,17 +30,17 @@ function SkillPage() {
                                         <Td>
                                             <div>
                                                 <PopupUpdate element="Edit"></PopupUpdate>
-                                                <PopupDelete element ="delete" name="skill" background="red.300"  ></PopupDelete>
+                                                <PopupDelete element="delete" name="skill" background="red.300"  ></PopupDelete>
                                             </div>
                                         </Td>
                                     </Tr>
                                 </Tbody>
                             </Table>
                         </TableContainer>
-                        <PopupAdd element="Add New Skill"/>
+                        <PopupAdd element="Add New Skill" />
                         <div>
-                         <h1 className="skillpage-heading">Skill Addition List</h1>
-                            <div className="request-table">
+                            <h1 className="adminskillpage-heading">Skill Addition List</h1>
+                            <div className="adminskillpagerequest-table">
                                 <TableContainer>
                                     <Table variant='simple'>
                                         <Thead>
@@ -56,8 +56,8 @@ function SkillPage() {
                                                 <Td>#</Td>
                                                 <Td>
                                                     <div>
-                                                        <Button  h="8" background="lightgreen">Accept</Button>
-                                                        <Button  h="8" background="red.300" ml="3" >Deny</Button>
+                                                        <Button h="8" background="lightgreen">Accept</Button>
+                                                        <Button h="8" background="red.300" ml="3" >Deny</Button>
                                                     </div>
                                                 </Td>
                                             </Tr>

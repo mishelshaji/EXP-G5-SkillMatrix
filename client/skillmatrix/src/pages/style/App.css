@@ -22,7 +22,7 @@
 
 .office-images {
     height: 100%;
-    width: 360px;
+    width: 400px;
 }
 
 .form {
@@ -44,14 +44,7 @@
     align-items: center;
 }
 
-.left {
-    background-color: rgb(37, 111, 222);
-    width: 400px;
-    height: 100%;
-    color: rgb(37, 111, 222);
-}
-
-.right {
+.register-right {
     background-color: rgb(247, 244, 244);
     width: 600px;
     height: 100%;
