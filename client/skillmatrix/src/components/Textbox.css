@@ -1,5 +1,5 @@
-input {
-    width: 260px;
+.input-box {
+    width: 200px;
     height: 32px;
     border: 1px;
     background-color: rgb(212, 212, 206);

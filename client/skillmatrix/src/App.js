@@ -11,12 +11,16 @@ import PageNotFound from "./pages/pagenotfound/PageNotFound";
 import SkillTable from "./pages/admin/AdminSkill.js"
 import LoginHandler from "./pages/common/Login";
 import Register from "./pages/common/Registration";
+import Comp from "./comp";
 function App() {
   return (
     <BrowserRouter>
       <Routes> 
-        <Route path="/login" element={<LoginHandler />}></Route>
-        <Route path="/sign" element={<Register />}></Route>
+        <Route path="/" element={<LoginHandler />}></Route>
+        <Route path="/test" element={<Comp />}></Route>
+
+        <Route path="/Register" element={<Register />}></Route>
+        <Route path="/user/home" element={<Home/>}></Route>
          <Route path="/admin/home" element={<AdminHome/>}></Route>
          <Route path="/admin/certificate" element={<CertificateList/>}></Route>
          <Route path="/admin/report" element={<ReportList/>}></Route>

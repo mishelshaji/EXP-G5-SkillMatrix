@@ -13,12 +13,12 @@ function Register() {
             name: yup.string().required("Name is required"),
             email: yup.string().email('email is not valid').required("Email is required"),
             phone: yup.number("Phone number is not valid").required("Phone no is required"),
-            location: yup.string().required("Location is required"),
-            team: yup.string().required("Team is required"),
-            role: yup.string().required("Role is required"),
-            businessunit: yup.string().required("Business unit is required"),
+            // location: yup.string().required("Location is required"),
+            // team: yup.string().required("Team is required"),
+            // role: yup.string().required("Designation is is required"),
+            // businessunit: yup.string().required("Business unit is required"),
             dob: yup.string().required("Dob is required"),
-            password: yup.string().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character").required("Password is required"),
+            password: yup.string().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, " Password must be of at least 8 alphanumeric character").required("Password is required"),
             confirm: yup.string().oneOf([yup.ref("password"), "password doesnt match"]).required("password is required")
         })
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -32,87 +32,103 @@ function Register() {
         <div className='fullpage'>
             <div className='container'>
                 <div className='left'>
-                    <img src={img1} alt="office images" />
+                    <img src={img1} alt="office images" className='office-images'/>
                 </div>
                 <div className='right'>
                     <form onSubmit={handleSubmit(reg)}>
                         <div className='form'>
                             <h2>Register</h2>
-                            <div className='row'>
+                            <div className='textbox-row'>
                                 <div className='details'>
-                                    <label for="name">Name</label>
-                                    <TextBox type="text" name="name"
+                                    <label for="name" className='labels'>Name</label>
+                                    <TextBox type="text" name="name" className='input-box'
                                         placeholder="enter your name"
                                         connect={[register("name")]} />
                                 </div>
                                 {errors.name ? errors.name.message : <></>}
                                 <div className='details'>
-                                    <label for="email">Email</label>
-                                    <TextBox type="email" name="email"
+                                    <label for="email" className='labels'>Email</label>
+                                    <TextBox type="email" name="email" className='input-box'
                                         placeholder="enter your email"
                                         connect={[register("email")]} />
                                 </div>
                                 {errors.email ? errors.email.message : <></>}
                             </div>
-                            <div className='row'>
+                            <div className='textbox-row'>
                                 <div className='details'>
-                                    <label for="phoneno">Phone no</label>
-                                    <TextBox type="text" name="phoneno"
+                                    <label for="phoneno" className='labels'>Phone no</label>
+                                    <TextBox type="text" name="phoneno" className='input-box'
                                         placeholder="enter your phone no"
                                         connect={[register("phone")]} />
                                 </div>
                                 {errors.phone ? errors.phone.message : <></>}
                                 <div className='details'>
-                                    <label for="location">Location</label>
-                                    <TextBox type="text" name="location"
+                                    <label for="location" className='labels'>Location</label>
+                                    <select type="text" name="location" className='input-box'
                                         placeholder="enter your location"
-                                        connect={[register("location")]} />
+                                        connect={[register("location")]}>
+                                            <option>TVM</option>
+                                            <option>Kochi</option>
+                                        </select>
                                 </div>
                                 {errors.location ? errors.location.message : <></>}
                             </div>
-                            <div className='row'>
+                            <div className='textbox-row'>
                                 <div className='details'>
-                                    <label for="role">Role</label>
-                                    <TextBox type="text" name="role"
+                                    <label for="role" className='labels'>Designation</label>
+                                    <select type="text" name="role" className='input-box'
                                         placeholder="enter your role"
-                                        connect={[register("role")]} />
+                                        connect={[register("role")]}>
+                                            <option>Assosiate softwere engineer</option>
+                                            <option>Senior softwere engineer</option>
+                                            <option>Project manager</option>
+                                            <option>team lead</option>
+                                        </select>
                                 </div>
                                 {errors.role ? errors.role.message : <></>}
                                 <div className='details'>
-                                    <label for="team">Team</label>
-                                    <TextBox type="text" name="team"
+                                    <label for="team" className='labels'>Team</label>
+                                    <select type="text" name="team" className='input-box'
                                         placeholder="enter your team"
-                                        connect={[register("team")]} />
+                                        connect={[register("team")]}>
+                                            <option>Developer tem</option>
+                                            <option>Testing team</option>
+                                            <option>UI design</option>
+                                        </select>
                                 </div>
                                 {errors.team ? errors.team.message : <></>}
                             </div>
-                            <div className='row'>
+                            <div className='textbox-row'>
                                 <div className='details'>
-                                    <label for="businesunit">Business unit</label>
-                                    <TextBox type="text" name="businesunit"
+                                    <label for="businesunit" className='labels'>Business unit</label>
+                                    <select type="text" name="businesunit" className='input-box'
                                         placeholder="enter your business unit"
-                                        connect={[register("businessunit")]} />
+                                        connect={[register("businessunit")]}>
+                                            <option>PES</option>
+                                            <option>DTS</option>
+                                            <option>ESS</option>
+                                        </select>
                                 </div>
                                 {errors.businessunit ? errors.businessunit.message : <></>}
                                 <div className='details'>
-                                    <label for="dob">Dob</label>
-                                    <TextBox type="text" name="dob"
+                                    <label for="dob" className='labels'>Dob</label>
+                                    <TextBox type="text" name="dob" className='input-box'
                                         placeholder="enter your dob"
                                         connect={[register("dob")]} />
                                 </div>
                                 {errors.dob ? errors.dob.message : <></>}
                             </div>
-                            <div className='row'>
+                            <div className='textbox-row'>
                                 <div className='details'>
-                                    <label for="password">Password</label>
-                                    <TextBox type="password" name="password"
+                                    <label for="password" className='labels'>Password</label>
+                                    <TextBox type="password" name="password" className='input-box'
                                         placeholder="enter your password"
                                         connect={[register("password")]} />
                                 </div>
                                 {errors.password ? errors.password.message : <></>}
                                 <div className='details'>
-                                    <label for="confirm">Confirm password</label>
-                                    <TextBox type="password" name="confirm"
+                                    <label for="confirm" className='labels'>Confirm password</label>
+                                    <TextBox type="password" name="confirm" className='input-box'
                                         placeholder="reenter the password"
                                         connect={[register("confirm")]} />
                                 </div>
