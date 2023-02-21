@@ -44,7 +44,7 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
             return BadRequest(result.Errors);
         }
 
-        //[Authorize(Roles = "User")]
+        [Authorize]
         [HttpGet("profile")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -52,6 +52,18 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
         {
             var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = await _service.GetProfileAsync(id);
+            return user == null ? NotFound() : Ok(user);
+        }
+
+        [Authorize]
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateProfile(UserCreateDto dto)
+        {
+            var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _service.UpdateAsync(id, dto);
             return user == null ? NotFound() : Ok(user);
         }
     }

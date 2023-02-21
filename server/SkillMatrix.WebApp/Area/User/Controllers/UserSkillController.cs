@@ -34,12 +34,37 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
             return Ok(result.Result);
         }
 
+        [HttpGet("{id}/UserSkills")]
+        [ProducesResponseType(typeof(UserSkillViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetOne(string id)
+        {
+            var result = await _service.GetByUserIdAsync(id);
+            if (result == null)
+                return NotFound();
+
+            return Ok(result.Result);
+        }
+
         [HttpPost]
         [ProducesResponseType(typeof(UserSkillViewDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create(UserSkillCreateDto dto)
         {
             var result = await _service.CreateAsync(dto);
+            if (!result.IsValid)
+                return BadRequest(result.Errors);
+
+            return CreatedAtAction(nameof(GetOne), new { id = result.Result.Id }, result.Result);
+        }
+
+        [HttpPost("UserExtraSkills")]
+        [ProducesResponseType(typeof(UserSkillViewDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        public async Task<IActionResult> CreateNewSkills(SkillCreateDto dto)
+        {
+            var result = await _service.CreateNewAsync(dto);
             if (!result.IsValid)
                 return BadRequest(result.Errors);
 

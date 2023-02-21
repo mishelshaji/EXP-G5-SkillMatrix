@@ -66,6 +66,9 @@ builder.Services.AddScoped<AccountsService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<SkillService>();
 builder.Services.AddScoped<UserSkillService>();
+builder.Services.AddScoped<ReportService>();
+builder.Services.AddScoped<BusinessUnitService>();
+builder.Services.AddScoped<RegistrationDetailsService>();
 
 var app = builder.Build();
 
