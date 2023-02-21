@@ -1,5 +1,5 @@
 import React from "react";
-import "../pages/style/AdminSkill.css";
+import "./PopupDelete.css";
 import {
   Modal,
   ModalOverlay,
@@ -18,7 +18,18 @@ function PopupDelete(props) {
   const finalRef = React.useRef(null);
   return (
     <>
-      <Button onClick={onOpen} ref={finalRef}>
+      <Button
+        onClick={onOpen}
+        ref={finalRef}
+        bg={"red.300"}
+        h="8"
+        ml="3"
+        colorScheme="blue"
+        width="50px"
+        height="30px"
+        className="delete-btn"
+        background="red"
+      >
         {props.element}
       </Button>
       <Modal
@@ -28,7 +39,7 @@ function PopupDelete(props) {
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent className="dmodal-content">
+        <ModalContent as="div" className="dmodal-content">
           <ModalHeader className="dmodal-header">
             delete {props.name}
           </ModalHeader>
@@ -37,8 +48,12 @@ function PopupDelete(props) {
             Are you sure You want to delete this {props.name}?
           </ModalBody>
           <ModalFooter>
-            <Button className="button">delete</Button>
-            <Button onClick={onClose}>cancel</Button>
+            <Button as="button" className="button">
+              delete
+            </Button>
+            <Button as="button" onClick={onClose}>
+              cancel
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

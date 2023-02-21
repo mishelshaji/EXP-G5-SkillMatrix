@@ -6,6 +6,7 @@ import img from '../../images/img.png';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Link } from 'react-router-dom';
 
 function LoginHandler() {
     const schema = yup.object().shape({
@@ -36,13 +37,17 @@ function LoginHandler() {
                             <h5>{errors.password ? errors.password.message : <></>}</h5>
                             <div className='button'>
                                 <Button id="login" value="Login"/>
+                               
                             </div>
+                            Not registered sigin <Link to = '/sign'>here</Link> 
                         </form>
                     </div>
                 </div>
                 <div className='rightcontainer'>
                     <img src={img} alt="OfficeImage"/>
                 </div>
+           
+
             </div>
         </div>
     )

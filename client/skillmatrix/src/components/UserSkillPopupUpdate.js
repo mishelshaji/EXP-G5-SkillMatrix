@@ -15,13 +15,13 @@ import {
   Select,
 } from "@chakra-ui/react";
 
-function UserSkillPopup(props) {
+function UserSkillPopupUpdate(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   return (
     <>
-      <Button onClick={onOpen} ref={finalRef} ml={props.ml} mt="10px" background="aquamarine" h="40px">
+      <Button onClick={onOpen} ref={finalRef} colorScheme='blue' width="50px" height="30px" m="10px" className="edit-btn" background="green">
         {props.element}
       </Button>
       <Modal
@@ -32,7 +32,7 @@ function UserSkillPopup(props) {
       >
         <ModalOverlay />
         <ModalContent as = "div" className="smodal-content">
-          <ModalHeader className="smodal-header">Add Skill</ModalHeader>
+          <ModalHeader className="smodal-header">Update Skill</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
@@ -61,7 +61,7 @@ function UserSkillPopup(props) {
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button as = "button" className="sbutton">Add</Button>
+            <Button as = "button" className="sbutton">Update</Button>
             <Button as = "button" className="sbutton2" onClick={onClose}>
               Cancel
             </Button>
@@ -72,4 +72,4 @@ function UserSkillPopup(props) {
   );
 }
 
-export default UserSkillPopup;
+export default UserSkillPopupUpdate;

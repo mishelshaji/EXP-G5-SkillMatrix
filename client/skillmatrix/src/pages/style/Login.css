@@ -24,15 +24,16 @@
 }
 
 .leftcontainer {
-    height: 95vh;
-    width: 30vw;
+    border-radius: 5%;
+    height: 60vh;
+    width: 25vw;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    border-color: rgb(0, 0, 0);
+    background-color: rgba(18, 92, 204, 0.153);
+    border-color: rgba(0, 0, 0, 0.838);
     box-shadow: 10px;
 }
 
