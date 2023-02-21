@@ -3,7 +3,7 @@ import '../components/Textbox.css'
 
 function TextBox(props) {
     return (
-        <input type={props.type} placeholder={props.prompt} name = {props.name} {...props.connect[0]}/>
+        <input type={props.type} placeholder={props.prompt} name = {props.name} {...props.connect[0]} className = {props.className}/>
     )
 }
 

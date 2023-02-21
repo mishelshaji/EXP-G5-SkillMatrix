@@ -22,6 +22,7 @@ function PopupAdd(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+
   const [data, setData] = useState([]);
   const [skillname, setSkillname] = useState("");
   const [skillcategory, setSkillcategory] = useState("");

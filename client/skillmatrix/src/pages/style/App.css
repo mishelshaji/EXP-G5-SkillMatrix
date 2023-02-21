@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-label {
+.labels {
     font-size: 13px;
     margin-left: 2px;
     margin-right: 10px;
@@ -20,7 +20,7 @@ label {
     margin-top: 15px;
 }
 
-img {
+.office-images {
     height: 100%;
     width: 360px;
 }
@@ -61,8 +61,11 @@ img {
     align-items: center;
 }
 
-.row {
+.textbox-row {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 .details {
