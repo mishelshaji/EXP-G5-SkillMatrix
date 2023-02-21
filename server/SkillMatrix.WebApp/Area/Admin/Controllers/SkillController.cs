@@ -22,6 +22,14 @@ namespace SkillMatrix.WebApp.Area.Admin.Controllers
             return Ok(result.Result);
         }
 
+        [HttpGet("SkillRequestPending")]
+        [ProducesResponseType(typeof(SkillViewDto[]), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAllPending()
+        {
+            var result = await _service.GetAllPendingasync();
+            return Ok(result.Result);
+        }
+
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(SkillViewDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -1,0 +1,14 @@
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\bin\Debug\net6.0\SkillMatrix.Domain.deps.json
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\bin\Debug\net6.0\SkillMatrix.Domain.runtimeconfig.json
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\bin\Debug\net6.0\SkillMatrix.Domain.dll
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\bin\Debug\net6.0\SkillMatrix.Domain.pdb
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.csproj.AssemblyReference.cache
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.AssemblyInfoInputs.cache
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.AssemblyInfo.cs
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.dll
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\refint\SkillMatrix.Domain.dll
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.pdb
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\SkillMatrix.Domain.genruntimeconfig.cache
+C:\Users\jomet.joseph\Documents\GitHub\EXP-G5-SkillMatrix\server\SkillMatrix.Domain\obj\Debug\net6.0\ref\SkillMatrix.Domain.dll
