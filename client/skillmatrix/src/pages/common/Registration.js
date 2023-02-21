@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/App.css'
-import img1 from '../../images/img1.jpg'
 import TextBox from '../../components/Textbox.js';
+import image from '../../images/register.jpg'
 import Button from '../../components/Button.js';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup'
@@ -13,10 +13,6 @@ function Register() {
             name: yup.string().required("Name is required"),
             email: yup.string().email('email is not valid').required("Email is required"),
             phone: yup.number("Phone number is not valid").required("Phone no is required"),
-            // location: yup.string().required("Location is required"),
-            // team: yup.string().required("Team is required"),
-            // role: yup.string().required("Designation is is required"),
-            // businessunit: yup.string().required("Business unit is required"),
             dob: yup.string().required("Dob is required"),
             password: yup.string().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, " Password must be of at least 8 alphanumeric character").required("Password is required"),
             confirm: yup.string().oneOf([yup.ref("password"), "password doesnt match"]).required("password is required")
@@ -31,10 +27,10 @@ function Register() {
     return (
         <div className='fullpage'>
             <div className='container'>
-                <div className='left'>
-                    <img src={img1} alt="office images" className='office-images'/>
+                <div className='register-left'>
+                    <img src={image} alt="office images" className='office-images' />
                 </div>
-                <div className='right'>
+                <div className='register-right'>
                     <form onSubmit={handleSubmit(reg)}>
                         <div className='form'>
                             <h2>Register</h2>
@@ -67,9 +63,9 @@ function Register() {
                                     <select type="text" name="location" className='input-box'
                                         placeholder="enter your location"
                                         connect={[register("location")]}>
-                                            <option>TVM</option>
-                                            <option>Kochi</option>
-                                        </select>
+                                        <option>TVM</option>
+                                        <option>Kochi</option>
+                                    </select>
                                 </div>
                                 {errors.location ? errors.location.message : <></>}
                             </div>
@@ -79,11 +75,11 @@ function Register() {
                                     <select type="text" name="role" className='input-box'
                                         placeholder="enter your role"
                                         connect={[register("role")]}>
-                                            <option>Assosiate softwere engineer</option>
-                                            <option>Senior softwere engineer</option>
-                                            <option>Project manager</option>
-                                            <option>team lead</option>
-                                        </select>
+                                        <option>Assosiate softwere engineer</option>
+                                        <option>Senior softwere engineer</option>
+                                        <option>Project manager</option>
+                                        <option>team lead</option>
+                                    </select>
                                 </div>
                                 {errors.role ? errors.role.message : <></>}
                                 <div className='details'>
@@ -91,10 +87,10 @@ function Register() {
                                     <select type="text" name="team" className='input-box'
                                         placeholder="enter your team"
                                         connect={[register("team")]}>
-                                            <option>Developer tem</option>
-                                            <option>Testing team</option>
-                                            <option>UI design</option>
-                                        </select>
+                                        <option>Developer tem</option>
+                                        <option>Testing team</option>
+                                        <option>UI design</option>
+                                    </select>
                                 </div>
                                 {errors.team ? errors.team.message : <></>}
                             </div>
@@ -104,10 +100,10 @@ function Register() {
                                     <select type="text" name="businesunit" className='input-box'
                                         placeholder="enter your business unit"
                                         connect={[register("businessunit")]}>
-                                            <option>PES</option>
-                                            <option>DTS</option>
-                                            <option>ESS</option>
-                                        </select>
+                                        <option>PES</option>
+                                        <option>DTS</option>
+                                        <option>ESS</option>
+                                    </select>
                                 </div>
                                 {errors.businessunit ? errors.businessunit.message : <></>}
                                 <div className='details'>

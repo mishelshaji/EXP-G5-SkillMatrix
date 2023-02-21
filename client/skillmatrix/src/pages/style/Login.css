@@ -85,6 +85,7 @@ label {
     align-items: center;
     margin-top: 4vh;
     margin-right: 4vw;
+    border-radius: 5px;
 }
 
 #login:hover {

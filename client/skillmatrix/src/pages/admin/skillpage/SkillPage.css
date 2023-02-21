@@ -1,13 +1,8 @@
-.main-container {
+.adminskillpage-main-container {
   display: flex;
 }
 
-.search-box {
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.skillpage-heading {
+.adminskillpage-heading {
   font-size: 20px;
   font-weight: bold;
   font-family: sans-serif;
@@ -15,22 +10,14 @@
   margin-top: 20px;
 }
 
-.search-btn {
-  width: 300px;
-}
-
-.skilltable-content {
+.adminskillpagetable-content {
   margin-top: 10vh;
 }
 
-.admin-skilladd {
-  width: 50px;
-}
-
-.request-table {
+.adminskillpagerequest-table {
   margin-top: 12vh;
 }
 
-.rightside {
+.adminskillpage-rightside {
   margin-left: 250px;
 }

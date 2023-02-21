@@ -4,8 +4,12 @@
     font-family: 'Arvo', serif;
 }
 
-.page_404  {
+.page_404 {
     width: 100%;
+}
+
+.pagenotfound-home {
+    text-align: center;
 }
 
 .four_zero_four_bg {
@@ -15,11 +19,13 @@
     background-position: center;
 }
 
-.four_zero_four_bg ,.pop-heading {
+.four_zero_four_bg,
+.pop-heading {
     font-size: 80px;
 }
 
-.four_zero_four_bg ,.pop-heading-two {
+.four_zero_four_bg,
+.pop-heading-two {
     font-size: 80px;
     margin-left: 20vw;
 }

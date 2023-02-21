@@ -7,6 +7,7 @@ import {
     Table,
     Thead,
     Tbody,
+    Tfoot,
     Tr,
     Th,
     Td,
@@ -41,35 +42,35 @@ function AdminHome() {
     ];
     return (
         <div>
-            <div className="main-container">
-                <div className="left">
+            <div className="adminpage-main-container">
+                <div>
                     <Sidebar></Sidebar>
                 </div>
-                <div className="right">
-                    <div className="top-content">
+                <div >
+                    <div >
                         <div className="admin-dashboard">
-                            <h2 className="dashboard-heading">
+                            <h2 className="admin-dashboard-heading">
                                 Admin Dashboard
                             </h2>
                         </div>
                     </div>
-                    <div className="middle-content">
-                        <div className="middle-one">
-                            <h3 className="middle-heading">No of Users</h3>
+                    <div className="admin-dashboard-middle-content">
+                        <div className="adminhome-middle-one">
+                            <h3 className="adminhome-middle-heading">No of Users</h3>
                         </div>
-                        <div className="middle-two">
-                            <h3 className="middle-heading">
+                        <div className="adminhome-middle-two">
+                            <h3 className="adminhome-middle-heading">
                                 {' '}
                                 Total No Of Skills
                             </h3>
                         </div>
-                        <div className="middle-three">
-                            <h3 className="middle-heading">
+                        <div className="adminhome-middle-three">
+                            <h3 className="adminhome-middle-heading">
                                 Total No Of Certificate
                             </h3>
                         </div>
                     </div>
-                    <div className="table-content">
+                    <div className="adminpage-table-content">
                         <TableContainer ml="16px" mt="20px">
                             <Table variant="simple" w="66vw" background="teal">
                                 <Thead background="#F7F9F9">

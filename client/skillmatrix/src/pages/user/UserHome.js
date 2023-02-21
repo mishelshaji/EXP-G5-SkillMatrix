@@ -8,63 +8,63 @@ import office from "../../images/office.jpg";
 import UserSkillPopup from "../../components/UserSkillPopup";
 function Home() {
     return (
-       <div>
-                    {/* left profile  */}
-              <div className="user-home">
-                <div className="first-section">
-                    <div className="profile-left">
+        <div>
+            {/* left profile  */}
+            <div className="user-home">
+                <div className="user-first-section">
+                    <div className="user-profile-left">
                         <div className="profile-div">
 
-                            <img src={office} className="profile-logo"></img>
-                            <div><h3 className="profile-text">Name :</h3></div>
-                            <div><h3 className="profile-text">Email :</h3></div>
-                            <div><h3 className="profile-text">Ph No :</h3></div>
-                            <div><h3 className="profile-text">Location:</h3></div>
-                            <div><h3 className="profile-text">Team :</h3></div>
-                            <div><h3 className="profile-text">Role :</h3></div>
+                            <img src={office} className="user-profile-logo"></img>
+                            <div><h3 className="user-profile-text">Name :</h3></div>
+                            <div><h3 className="user-profile-text">Email :</h3></div>
+                            <div><h3 className="user-profile-text">Ph No :</h3></div>
+                            <div><h3 className="user-profile-text">Location:</h3></div>
+                            <div><h3 className="user-profile-text">Team :</h3></div>
+                            <div><h3 className="user-profile-text">Role :</h3></div>
 
                         </div>
                     </div>
                     {/* right first coolowmn */}
-                    <div className="profile-right">
-                        <div className="table-heading">Skill List</div>
+                    <div className="user-profile-right">
+                        <div className="user-table-heading">Skill List</div>
                         <div className="skilltable-container">
                             <SkillTable></SkillTable>
                         </div>
-                        <UserSkillPopup ml="53vw" mt="10px" background="aquamarine" h="40px" element="Add Skill"></UserSkillPopup>
+                        <UserSkillPopup ml="44vw" mt="10px" background="aquamarine" h="40px" element="Add Skill"></UserSkillPopup>
 
-                        <div className="table-heading">Certificate List</div>
+                        <div className="user-table-heading">Certificate List</div>
                         <div className="certificatetable-container">
                             <CertificateTable></CertificateTable>
                         </div>
-                        <Button ml="48vw" mt="10px" background="aquamarine" h="40px">Add Certificate+</Button>
+                        <Button ml="40vw" mt="10px" background="aquamarine" h="40px">Add Certificate+</Button>
                     </div>
                 </div>
-                <div className="second-section">
-                    <h2 className="second-heading">Skill Matrix Level</h2>
-                    
+                <div className="user-second-section">
+                    <h2 className="user-second-heading">Skill Matrix Level</h2>
+
                     <div className="card-section">
-                        <div class="card">
-                            <div class="card-details">
-                                <p class="text-title">Beginner</p>
-                                <p class="text-body">Here are the details of the card</p>
+                        <div className="user-card">
+                            <div className="card-details">
+                                <p className="user-text-title">Beginner</p>
+                                <p className="user-text-body">Here are the details of the card</p>
                             </div>
-                            <button class="card-button">More info</button>
+                            <button className="card-button">More info</button>
                         </div>
 
-                        <div class="card">
-                            <div class="card-details">
-                                <p class="text-title">Intermediate</p>
-                                <p class="text-body">Here are the details of the card</p>
+                        <div className="user-card">
+                            <div className="card-details">
+                                <p className="user-text-title">Intermediate</p>
+                                <p className="user-text-body">Here are the details of the card</p>
                             </div>
-                            <button class="card-button">More info</button>
+                            <button className="card-button">More info</button>
                         </div>
-                        <div class="card">
-                            <div class="card-details">
-                                <p class="text-title">Professional</p>
-                                <p class="text-body">Here are the details of the card</p>
+                        <div className="user-card">
+                            <div className="card-details">
+                                <p className="user-text-title">Professional</p>
+                                <p className="user-text-body">Here are the details of the card</p>
                             </div>
-                            <button class="card-button">More info</button>
+                            <button className="card-button">More info</button>
                         </div>
                     </div>
                 </div>

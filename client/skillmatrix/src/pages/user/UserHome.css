@@ -1,20 +1,17 @@
-.profile-right
-{
+.user-profile-right {
     margin-left: 20vw;
     height: 100vh;
 }
 
-.profile-left
-{
+.user-profile-left {
     background-color: #10153B;
     height: 100vh;
     width: 20vw;
     position: fixed;
-    
+
 }
 
-.table-heading
-{
+.user-table-heading {
     background-color: aliceblue;
     width: 40vw;
     margin-left: 160px;
@@ -23,65 +20,70 @@
     border-radius: 10px;
     font-weight: bold;
     padding: 5px;
-} 
-.right-content
-{
+}
+
+.right-content {
     background-color: aquamarine;
 }
-.user-home
-{
-  height: 200vh;
+
+.user-home {
+    height: 200vh;
 }
-.first-section
-{
+
+.user-first-section {
     display: flex;
 }
-.profile-logo
-{
+
+.user-profile-logo {
     width: 130px;
     height: 130px;
     margin-left: 50px;
     border-radius: 50%;
 }
-.profile-text
-{
+
+.user-profile-text {
     color: white;
     font-weight: bold;
     margin: 30px;
 }
-.second-section
-{
-    background-color:#EDF0F9;
+
+.user-second-section {
+    background-color: #EDF0F9;
     height: 100vh;
-}
-.second-heading
-{
-  padding-top: 15vh;
-  padding-left: 40%;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
 
 }
-.second-paraone
-{
-  margin-top: 5vh;
-  display: flex;
+
+.user-second-heading {
+    padding-top: 15vh;
+    padding-left: 40%;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    top: 20px;
+    left: -280px !important;
 
 }
-.second-img
-{
-    width:250px;
+
+.second-paraone {
+    margin-top: 5vh;
+    display: flex;
+
+}
+
+.second-img {
+    width: 250px;
     height: 300px;
     border-radius: 10px;
     margin-left: 20px;
 }
-.second-text
-{
+
+.second-text {
     margin-left: 50px;
 
 }
-.card {
+
+.user-card {
     width: 190px;
     height: 254px;
     border-radius: 20px;
@@ -91,17 +93,17 @@
     border: 2px solid #c3c6ce;
     transition: 0.5s ease-out;
     overflow: visible;
-   }
-   
-   .card-details {
+}
+
+.card-details {
     color: black;
     height: 100%;
     gap: .5em;
     display: grid;
     place-content: center;
-   }
-   
-   .card-button {
+}
+
+.card-button {
     transform: translate(-50%, 125%);
     width: 60%;
     border-radius: 1rem;
@@ -115,36 +117,37 @@
     bottom: 0;
     opacity: 0;
     transition: 0.3s ease-out;
-   }
-   
-   .text-body {
+}
+
+.user-text-body {
     color: rgb(134, 134, 134);
-   }
-   
-   /*Text*/
-   .text-title {
+}
+
+/*Text*/
+.user-text-title {
     font-size: 1.5em;
     font-weight: bold;
     color: white;
-   }
-   
-   /*Hover*/
-   .card:hover {
+}
+
+/*Hover*/
+.card:hover {
     border-color: #008bf8;
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-   }
-   
-   .card:hover .card-button {
+}
+
+.card:hover,
+.card-button {
     transform: translate(-50%, 50%);
     opacity: 1;
-   }
+}
 
-   .card{
+.user-card {
     margin-left: 60px;
     margin-top: 50px;
-   }
-   .card-section
-   {
+}
+
+.card-section {
     display: flex;
     margin-left: 25vw;
-   }
+}

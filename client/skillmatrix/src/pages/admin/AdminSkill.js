@@ -16,8 +16,8 @@ function SkillTable() {
   const [Data, setData] = useState([]);
   const fetchUsers = async () => {
     const res = await axios.get("https://localhost:7227/api/User/UserSkill")
-      console.log(res.data.products)
-      setData(res.data.products);
+    console.log(res.data.products)
+    setData(res.data.products);
   };
   return (
     <div className="side-table">
