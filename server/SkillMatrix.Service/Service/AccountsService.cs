@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SkillMatrix.Domain.Types;
+using SkillMatrix.Service.Data;
 using SkillMatrix.Service.Dto;
 using System;
 using System.Collections.Generic;
@@ -19,14 +20,16 @@ namespace SkillMatrix.Service.Service
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IConfiguration _configuration;
+        private readonly ApplicationDbContext db;
 
         public AccountsService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager,
-            SignInManager<ApplicationUser> signInManager, IConfiguration configuration)
+            SignInManager<ApplicationUser> signInManager, IConfiguration configuration, ApplicationDbContext db)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _configuration = configuration;
+            this.db = db;
         }
 
         public async Task<ServiceResponse<bool>> CreateUserAsync(UserCreateDto dto)
@@ -98,14 +101,85 @@ namespace SkillMatrix.Service.Service
                 return null;
             }
 
-            return new ProfileViewDto
+            //return new ProfileViewDto
+            //{
+            //    Name = user.Name,
+            //    Email = user.Email,
+            //    DateOfBirth= user.DateOfBirth,
+            //    PhoneNumber= user.PhoneNumber
+            //};
+
+            var user1 = await db.ApplicationUsers
+                .Include(m=>m.BusinessUnit)
+                .Include(m=>m.Designation)
+                .Include(m=>m.Team)
+                .Include(m=>m.Location)
+                .FirstOrDefaultAsync(m=>m.Id == id);
+
+            return new()
             {
-                Name = user.Name,
-                Email = user.Email,
+                Name = user1.Name,
+                Email = user1.Email,
+                DateOfBirth = user1.DateOfBirth,
+                PhoneNumber = user1.PhoneNumber,
+                BusinessUnit = new BusinessUnitViewDto
+                {
+                    Id = user1.BusinessUnit.Id,
+                    Name = user.BusinessUnit.Name
+                },
+                Designation = new DesignationViewDto
+                {
+                    Id = user1.Designation.Id,
+                    Name = user1.Designation.Name,
+                },
+                Team = new TeamViewDto
+                {
+                    Id = user1.Team.Id,
+                    Name = user1.Team.Name,
+                },
+                Location = new LocationViewDto
+                {
+                    Id = user1.Location.Id,
+                    Name = user1.Location.Name,
+                }
             };
         }
 
+        public async Task<ServiceResponse<ProfileViewDto>?> UpdateAsync(string id, UserCreateDto dto)
+        {
+            var result = new ServiceResponse<ProfileViewDto>();
 
+            var user = await db.ApplicationUsers.FindAsync(id);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            user.Name = dto.Name;
+            user.Email = dto.Email;
+            user.DateOfBirth = dto.DateOfBirth;
+            user.PhoneNumber = dto.PhoneNumber;
+            user.BusinessUnitId = dto.BusinessUnitId;
+            user.DesignationId = dto.DesignationId;
+            user.TeamId = dto.TeamId;
+            user.LocationId = dto.LocationId;
+
+            await db.SaveChangesAsync();
+
+            result.Result = new ProfileViewDto
+            {
+                Name = user.Name,
+                Email = user.Email,
+                DateOfBirth = user.DateOfBirth,
+                PhoneNumber = user.PhoneNumber,
+                BusinessUnitId = 0,
+                DesignationId = 0,
+                TeamId = 0,
+                LocationId = 0
+            };
+            return result;
+        }
         private string GenerateToken(ApplicationUser user)
         {
             var role = _userManager.GetRolesAsync(user)

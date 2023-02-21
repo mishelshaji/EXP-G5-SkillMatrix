@@ -11,6 +11,6 @@ namespace SkillMatrix.Domain.Types
     {
         Beginner = 1,
         Intermediate = 2,
-        Additional = 3
+        Expert = 3
     }
 }

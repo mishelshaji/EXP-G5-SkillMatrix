@@ -40,6 +40,30 @@ namespace SkillMatrix.Service.Service
                 Result = skills
             };
         }
+
+        public async Task<ServiceResponse<SkillViewDto[]>> GetAllPendingasync()
+        {
+            var skills = await _context.Skills
+                .Where(m => m.Status == Status.pending)
+                .Include(m => m.Category)
+                .Select(s => new SkillViewDto
+                {
+                    Id = s.Id,
+                    Name = s.Name,
+                    Status = s.Status,
+                    Category = new()
+                    {
+                        Id = s.Category.Id,
+                        Name = s.Category.Name
+                    }
+
+                }).ToArrayAsync();
+
+            return new()
+            {
+                Result = skills
+            };
+        }
         public async Task<ServiceResponse<SkillViewDto>?> GetByIdAsync(int id)
         {
             var skill = await _context.Skills

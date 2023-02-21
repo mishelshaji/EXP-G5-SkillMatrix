@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "TNbeQ4ApYZj108J/oEdRr3Ee+7XTgu1hPjQ7KdgZBic=",
+  "Source": "SkillMatrix.WebApp",
+  "BasePath": "_content/SkillMatrix.WebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -91,6 +91,43 @@ namespace SkillMatrix.Service.Service
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<UserSkillViewDto[]>?> GetByUserIdAsync(string Id)
+        {
+            var userSkill = await _db.UserSkills
+                .Where(m => m.ApplicationUserId == Id)
+                .Include(p => p.ApplicationUser)
+                .Include(s => s.Skill)
+                .ThenInclude(c => c.Category)
+                .Where(s => s.Skill.Status == Status.Approved)
+                .Select(UserSkill => new UserSkillViewDto
+                {
+                    Id = UserSkill.Id,
+                    SkillType = UserSkill.SkillType,
+                    Proficiency = UserSkill.Proficiency,
+                    ApplicationUser = new()
+                    {
+                        Id = UserSkill.ApplicationUser.Id,
+                        Name = UserSkill.ApplicationUser.Name,
+                    },
+                    Skill = new()
+                    {
+                        Id = UserSkill.Skill.Id,
+                        Name = UserSkill.Skill.Name,
+                        Category = new()
+                        {
+                            Id = UserSkill.Skill.Category.Id,
+                            Name = UserSkill.Skill.Category.Name,
+                        }
+                    }
+                }).ToArrayAsync();
+
+            return new()
+            {
+                Result = userSkill
+            };
+
+        }
+
         public async Task<ServiceResponse<UserSkillViewDto>> CreateAsync(UserSkillCreateDto dto)
         {
             var result = new ServiceResponse<UserSkillViewDto>();
@@ -113,6 +150,41 @@ namespace SkillMatrix.Service.Service
                 SkillType = userSkill.SkillType,
                 Proficiency = userSkill.Proficiency,
                 SkillId = userSkill.SkillId
+            };
+            return result;
+        }
+
+        public async Task<ServiceResponse<SkillViewDto>> CreateNewAsync(SkillCreateDto dto)
+        {
+            var result = new ServiceResponse<SkillViewDto>();
+
+            // Basic validations
+            if (!await _db.Categories.AnyAsync(m => m.Id == dto.CategoryId))
+                result.AddError(nameof(dto.CategoryId), "Invalid category");
+
+            if (await _db.Skills.AnyAsync(m => m.Name == dto.Name))
+                result.AddError(nameof(dto.Name), "A similar skill already exists.");
+
+            if (!result.IsValid)
+                return result;
+
+            var skill = new Skill()
+            {
+                Name = dto.Name,
+                Status = Status.pending,
+                CreatedDate = DateTime.UtcNow,
+                ModifiedDate = DateTime.UtcNow,
+                CategoryId = dto.CategoryId,
+            };
+            _db.Skills.Add(skill);
+            await _db.SaveChangesAsync();
+
+            result.Result = new()
+            {
+                Id = skill.Id,
+                Name = skill.Name,
+                Status = skill.Status,
+                Category = null
             };
             return result;
         }
