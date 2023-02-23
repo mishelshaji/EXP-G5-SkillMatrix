@@ -1,6 +1,5 @@
 
 import React from "react";
-
 import { BrowserRouter, Routes, Route,Link, createBrowserRouter } from "react-router-dom";
 import CertificateList from "./pages/admin/certificate/CertificatePage";
 import ReportList from "./pages/admin/report/ReportPage";
@@ -13,6 +12,7 @@ import LoginHandler from "./pages/common/Login";
 import Register from "./pages/common/Registration";
 import Comp from "./comp";
 import AdminGuard from "./components/AdminProtectGuard";
+import RequestInterceptor from "./service/requestInterceptor";
 
 const routes = createBrowserRouter([
   {path: '/', element: <LoginHandler/>},
@@ -23,6 +23,7 @@ const routes = createBrowserRouter([
 function App() {
   return (
     <BrowserRouter>
+    <RequestInterceptor/>
       <Routes> 
         <Route path="/" element={<LoginHandler />}></Route>
         <Route path="/test" element={<Comp />}></Route>
@@ -41,7 +42,6 @@ function App() {
           element={
           <AdminGuard></AdminGuard>}>
             <Route path="home" element={<AdminHome />} />
-            <Route path="certificate" element={<CertificateList />} />
             <Route path="report" element={<ReportList/>}></Route>
             <Route path="skill" element={<SkillPage/>}></Route>
             <Route path="userstable" element={<SkillTable/>}></Route>

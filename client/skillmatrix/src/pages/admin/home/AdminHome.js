@@ -6,7 +6,7 @@ import Sidebar from '../../../components/sidebar/Sidebar';
 import {
     Table,
     Thead,
-    Tbody,
+    Tbody,  
     Tfoot,
     Tr,
     Th,
@@ -16,37 +16,19 @@ import {
 } from '@chakra-ui/react';
 
 function AdminHome() {
-    const Skills = [
-        {
-            skillId: 1,
-            skillname: 'python',
-            category: 'java'
-        },
-        {
-            skillId: 2,
-            skillname: 'java',
-            category: 'Login'
-        }
-    ];
-    const Certificate = [
-        {
-            certificateId: 1,
-            certificatename: 'python',
-            category: 'programming'
-        },
-        {
-            certificateId: 2,
-            certificatename: 'java',
-            category: 'programming'
-        }
-    ];
+    const[data,setData]=useState([]);
+    useEffect(()=>{
+        axios.get(`https://localhost:7227/api/Admin/Skill`).then((res)=>{
+            setData(res.data);
+        });
+    },[]);
     return (
         <div>
             <div className="adminpage-main-container">
                 <div>
                     <Sidebar></Sidebar>
                 </div>
-                <div >
+                <div className='admin-dashboard-container'>
                     <div >
                         <div className="admin-dashboard">
                             <h2 className="admin-dashboard-heading">
@@ -64,50 +46,30 @@ function AdminHome() {
                                 Total No Of Skills
                             </h3>
                         </div>
-                        <div className="adminhome-middle-three">
+                        {/* <div className="adminhome-middle-three">
                             <h3 className="adminhome-middle-heading">
                                 Total No Of Certificate
                             </h3>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="adminpage-table-content">
                         <TableContainer ml="16px" mt="20px">
                             <Table variant="simple" w="66vw" background="teal">
                                 <Thead background="#F7F9F9">
                                     <Tr>
-                                        <Th>Skill Id</Th>
                                         <Th>Skill Name</Th>
                                         <Th>Category</Th>
                                     </Tr>
                                 </Thead>
                                 <Tbody>
-                                    {Skills.map((i) => (
-                                        <Tr>
-                                            <Td>{i.skillId}</Td>
-                                            <Td>{i.skillname}</Td>
-                                            <Td>{i.category}</Td>
-                                        </Tr>
-                                    ))}
-                                </Tbody>
-                            </Table>
-                        </TableContainer>
-                        <TableContainer ml="16px" mt="50px">
-                            <Table variant="simple" w="66vw" background="teal">
-                                <Thead background="#F7F9F9">
+                                  {data
+                                  .filter((item)=>item.status === 1)
+                                  .map((item)=>(
                                     <Tr>
-                                        <Th>Certificate Id</Th>
-                                        <Th>Certificate Name</Th>
-                                        <Th>Category</Th>
-                                    </Tr>
-                                </Thead>
-                                <Tbody>
-                                    {Certificate.map((i) => (
-                                        <Tr>
-                                            <Td>{i.certificateId}</Td>
-                                            <Td>{i.certificatename}</Td>
-                                            <Td>{i.category}</Td>
-                                        </Tr>
-                                    ))}
+                                    <Td>{item.name}</Td>
+                                    <Td>{item.category.name}</Td>
+                                </Tr>
+                                  ))}
                                 </Tbody>
                             </Table>
                         </TableContainer>

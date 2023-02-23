@@ -25,24 +25,30 @@ function PopupAdd(props) {
 
   const [data, setData] = useState([]);
   const [skillname, setSkillname] = useState("");
-  const [skillcategory, setSkillcategory] = useState("");
+  const [skillcategory, setSkillcategory] = useState(0);
   useEffect(() => {
-    axios.get("https://dummyjson.com/products").then((res) => {
-      console.log(res.data.products);
-      res.data.products.forEach((i) => {
-        console.log(i);
-      });
-      setData(res.data.products);
-    }, []);
-  }, []);
-  const skillpost = async () => {
-    await axios
-      .post("https://dummyjson.com/products", {
-        skillname: skillname,
-        category: skillcategory,
+    axios.get("https://localhost:7227/api/Admin/Categories").then((res) => {
+      // console.log(res.data.products);
+      // res.data.products.forEach((i) => {
+      //   console.log(i);
+      setData(res.data)
       })
-      .then(console.log(skillname, skillcategory));
+    }, []);
+  const skillpost = () => {
+    console.log(skillname,skillcategory);
+    
+      axios.post("https://localhost:7227/api/Admin/Skill", {
+        skillname: skillname,
+        categoryId: skillcategory,
+      })
+      .then((res) => {
+        console.log("success")
+      })
+      .catch((err) => {
+        console.log(err)
+      });
   };
+ 
   return (
     <>
       <Button
@@ -69,7 +75,7 @@ function PopupAdd(props) {
           <ModalBody>
             <FormControl>
               <FormLabel class="formlabel">Skill Name</FormLabel>
-              <Input type="text"></Input>
+              <Input type="text" onChange ={(e) => setSkillname(e.target.value)}></Input>
             </FormControl>
             <FormControl>
               <FormLabel class="formlabel">Category</FormLabel>
@@ -78,7 +84,7 @@ function PopupAdd(props) {
                 onChange={(e) => setSkillcategory(e.target.value)}
               >
                 {data.map((item) => {
-                  return <option value={item.title}>{item.title}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </Select>
             </FormControl>

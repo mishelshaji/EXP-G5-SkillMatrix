@@ -13,6 +13,8 @@ namespace SkillMatrix.Service.Dto
 
         //public Proficiency Proficiency { get; set; }
 
+        public string SkillName { get; set; }
+
         public Skill Skill { get; set; }
 
         public int Count { get; set; }

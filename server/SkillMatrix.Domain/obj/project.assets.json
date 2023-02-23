@@ -3276,19 +3276,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jomet.joseph\\.nuget\\packages\\": {}
+    "C:\\Users\\abhay.k\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jomet.joseph\\Documents\\GitHub\\EXP-G5-SkillMatrix\\server\\SkillMatrix.Domain\\SkillMatrix.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\abhay.k\\Documents\\GitHub\\EXP-G5-SkillMatrix\\server\\SkillMatrix.Domain\\SkillMatrix.Domain.csproj",
       "projectName": "SkillMatrix.Domain",
-      "projectPath": "C:\\Users\\jomet.joseph\\Documents\\GitHub\\EXP-G5-SkillMatrix\\server\\SkillMatrix.Domain\\SkillMatrix.Domain.csproj",
-      "packagesPath": "C:\\Users\\jomet.joseph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jomet.joseph\\Documents\\GitHub\\EXP-G5-SkillMatrix\\server\\SkillMatrix.Domain\\obj\\",
+      "projectPath": "C:\\Users\\abhay.k\\Documents\\GitHub\\EXP-G5-SkillMatrix\\server\\SkillMatrix.Domain\\SkillMatrix.Domain.csproj",
+      "packagesPath": "C:\\Users\\abhay.k\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\abhay.k\\Documents\\GitHub\\EXP-G5-SkillMatrix\\server\\SkillMatrix.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jomet.joseph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abhay.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

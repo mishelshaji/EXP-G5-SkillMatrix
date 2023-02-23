@@ -19,17 +19,18 @@
 .admin-dashboard-middle-content {
     background-color: rgb(29, 72, 99);
     width: 66vw;
-    height: 25vh;
+    height: 28vh;
     margin-left: 20px;
     margin-top: 8vh;
     display: flex;
     padding: 10px;
+    justify-content: space-around;
 }
 
 .adminhome-middle-one,
 .adminhome-middle-two,
 .adminhome-middle-three {
-    width: 200px;
+    width: 300px;
     background-color: #f0f0f0;
     margin: 10px;
     margin-left: 20px;

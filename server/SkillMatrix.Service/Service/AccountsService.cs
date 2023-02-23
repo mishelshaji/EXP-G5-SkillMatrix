@@ -145,6 +145,63 @@ namespace SkillMatrix.Service.Service
             };
         }
 
+        public async Task<ProfileViewDto> GetProfileByIdAsync(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var user1 = await db.ApplicationUsers
+                .Include(m => m.BusinessUnit)
+                .Include(m => m.Designation)
+                .Include(m => m.Team)
+                .Include(m => m.Location)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            return new()
+            {
+                Id = user1.Id,
+                Name = user1.Name,
+                Email = user1.Email,
+                DateOfBirth = user1.DateOfBirth,
+                PhoneNumber = user1.PhoneNumber,
+                BusinessUnit = new BusinessUnitViewDto
+                {
+                    Id = user1.BusinessUnit.Id,
+                    Name = user.BusinessUnit.Name
+                },
+                Designation = new DesignationViewDto
+                {
+                    Id = user1.Designation.Id,
+                    Name = user1.Designation.Name,
+                },
+                Team = new TeamViewDto
+                {
+                    Id = user1.Team.Id,
+                    Name = user1.Team.Name,
+                },
+                Location = new LocationViewDto
+                {
+                    Id = user1.Location.Id,
+                    Name = user1.Location.Name,
+                }
+            };
+        }
+
+        public async Task<ProfileViewDto[]> GetAllProfileAsync()
+        {
+            var res = await _userManager.GetUsersInRoleAsync("User");
+            return res.Select(m => new ProfileViewDto
+            {
+                Name = m.Name,
+                Email = m.Email,
+                DateOfBirth = m.DateOfBirth,
+                PhoneNumber = m.PhoneNumber
+            }).ToArray();
+        }
+
         public async Task<ServiceResponse<ProfileViewDto>?> UpdateAsync(string id, UserCreateDto dto)
         {
             var result = new ServiceResponse<ProfileViewDto>();

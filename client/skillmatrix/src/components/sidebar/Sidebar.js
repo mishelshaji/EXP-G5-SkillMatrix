@@ -31,13 +31,6 @@ const Sidebar = () => {
             </Link>
           </div>
           <div className="sidebar-links">
-            <i class="fa-solid fa-file"></i>&nbsp;
-            <Link to="/admin/certificate">
-              <h4 className="sidebar-heading">Certificate</h4>
-            </Link>
-          </div>
-
-          <div className="sidebar-links">
             <i class="fa-solid fa-bug"></i>
             <Link to="/admin/report">
               <h4 className="sidebar-heading">Reports</h4>

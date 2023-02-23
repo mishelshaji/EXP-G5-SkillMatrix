@@ -45,7 +45,7 @@ namespace SkillMatrix.WebApp.Area.Admin.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(SkillViewDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Create(SkillCreateDto dto)
+        public async Task<IActionResult> Create([FromBody]SkillCreateDto dto)
         {
             var result = await _service.CreateAsync(dto);
             if (!result.IsValid)
@@ -70,6 +70,24 @@ namespace SkillMatrix.WebApp.Area.Admin.Controllers
 
             return Ok(result.Result);
         }
+
+        [HttpPut("{id}/UpdatePending")]
+        [ProducesResponseType(typeof(SkillViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdatePending(int id)
+        {
+            var result = await _service.UpdatePendingAsync(id);
+
+            if (result == null)
+                return NotFound();
+
+            if (!result.IsValid)
+                return BadRequest(result.Errors);
+
+            return Ok(result.Result);
+        }
+
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -131,10 +131,30 @@ namespace SkillMatrix.Service.Service
         public async Task<ServiceResponse<UserSkillViewDto>> CreateAsync(UserSkillCreateDto dto)
         {
             var result = new ServiceResponse<UserSkillViewDto>();
-
+            switch (dto.SkillType)
+            {
+                case SkillTypes.Primary:
+                    if (await _db.UserSkills.AnyAsync(m => m.SkillType == SkillTypes.Primary && m.ApplicationUserId == dto.ApplicationUserId))
+                    {
+                        result.AddError(nameof(SkillTypes), "A user can include only one primary skill");
+                        return result;
+                    }
+                    break;
+                case SkillTypes.Secondary:
+                    if (await _db.UserSkills.AnyAsync(m => m.SkillType == SkillTypes.Secondary && m.ApplicationUserId == dto.ApplicationUserId))
+                    {
+                        result.AddError(nameof(SkillTypes), "A user can include only one Secondary skill");
+                        return result;
+                    }
+                    break;
+                case SkillTypes.Additional:
+                    break;
+                default:
+                    break;
+            }
             var userSkill = new UserSkill()
             {
-                SkillType = dto.SkillType,
+               // SkillType = SkillType.TryParse(dto.SkillType),
                 Proficiency = dto.Proficiency,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,

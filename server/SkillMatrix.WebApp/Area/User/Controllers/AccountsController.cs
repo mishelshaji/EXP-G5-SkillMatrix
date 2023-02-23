@@ -21,9 +21,9 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
         [HttpPost("user/register")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PostUser(UserCreateDto dto)
+        public async Task<IActionResult> PostUser([FromBody]UserCreateDto dto)
         {
-            var result = await _service.CreateUserAsync(dto);
+                var result = await _service.CreateUserAsync(dto);
             if(!result.IsValid)
             {
                 return BadRequest(result.Errors);
@@ -35,7 +35,7 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PostLogin(LoginDto dto)
+        public async Task<IActionResult> PostLogin([FromBody]LoginDto dto)
         {
             var result = await _service.LoginAsync(dto);
             if (result.IsValid)
@@ -52,6 +52,27 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
         {
             var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = await _service.GetProfileAsync(id);
+            return user == null ? NotFound() : Ok(user);
+        }
+
+        //[Authorize]
+        [HttpGet("profile/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> GetProfileById(string id)
+        {
+            var user = await _service.GetProfileByIdAsync(id);
+            return user == null ? NotFound() : Ok(user);
+        }
+
+        //[Authorize]
+        [HttpGet("UserProfiles")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> GetUserProfile()
+        {
+            var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _service.GetAllProfileAsync();
             return user == null ? NotFound() : Ok(user);
         }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SkillMatrix.Domain.Types;
 using SkillMatrix.Service.Dto;
 using SkillMatrix.Service.Service;
 
@@ -49,9 +50,16 @@ namespace SkillMatrix.WebApp.Area.User.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(UserSkillViewDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Create(UserSkillCreateDto dto)
+        public async Task<IActionResult> Create([FromBody]UserSkillUpdateDtoApi dto)
         {
-            var result = await _service.CreateAsync(dto);
+            var enumDto = new UserSkillCreateDto
+            {
+                ApplicationUserId = dto.ApplicationUserId,
+                SkillId = dto.SkillId,
+                Proficiency = (Proficiencies)dto.Proficiency,
+                SkillType = (SkillTypes)dto.SkillType,
+            };
+            var result = await _service.CreateAsync(enumDto);
             if (!result.IsValid)
                 return BadRequest(result.Errors);
 

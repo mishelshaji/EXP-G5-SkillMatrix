@@ -1,6 +1,6 @@
 ﻿namespace SkillMatrix.Domain.Types
 {
-    public enum SkillType
+    public enum SkillTypes
     {
         Primary = 1,
         Secondary = 2,

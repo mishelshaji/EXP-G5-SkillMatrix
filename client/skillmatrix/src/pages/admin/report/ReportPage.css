@@ -1,6 +1,6 @@
 .adminreport-home {
   display: flex;
-  background-color: #ECECF8;
+  background-color: #ffff;
 }
 
 .chart-heading,
@@ -39,7 +39,7 @@
 }
 
 .piechart {
-  background-color: #ffff;
+  background-color: #17134b;
   margin-left: 20px;
   margin-top: 40px;
   align-items: center;
@@ -47,7 +47,7 @@
 }
 
 .barchart {
-  background-color: #ffff;
+  background-color: #17134b;
   margin-left: 20px;
   margin-top: 40px;
   align-items: center;

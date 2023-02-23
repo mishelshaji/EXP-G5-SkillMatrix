@@ -21,10 +21,12 @@ namespace SkillMatrix.Service.Service
         public async Task<ServiceResponse<ReportViewDto[]>> GetAllAsync()
         {
             var report = await _db.UserSkills
+                .Include(m => m.Skill)
                 .GroupBy(x => x.SkillId)
                 .Select(s => new ReportViewDto
                 {
                     SkillId = s.Key,
+                    SkillName = s.FirstOrDefault().Skill.Name,
                     Count = s.Select(x => x.ApplicationUserId).Distinct().Count()
                 }).ToArrayAsync();
 
@@ -37,7 +39,7 @@ namespace SkillMatrix.Service.Service
         public async Task<ServiceResponse<ReportViewDto[]>> GetAllProficiencyLevelAsync()
         {
             var report = await _db.UserSkills
-                .Where(m=>m.Proficiency == Proficiency.Expert)
+                .Where(m=>m.Proficiency == Proficiencies.Expert)
                 .GroupBy(x => x.SkillId)
                 .Select(s => new ReportViewDto
                 {

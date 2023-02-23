@@ -45,6 +45,7 @@
     color: white;
     font-weight: bold;
     margin: 30px;
+    font-size: 12px;
 }
 
 .user-second-section {
@@ -150,4 +151,16 @@
 .card-section {
     display: flex;
     margin-left: 25vw;
+}
+
+.profile-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
 }

@@ -9,13 +9,24 @@ namespace SkillMatrix.Service.Dto
 {
     public class UserSkillCreateDto
     {
-        public SkillType SkillType { get; set; }
+        public SkillTypes SkillType { get; set; }
 
-        public Proficiency Proficiency { get; set; }
+        public Proficiencies Proficiency { get; set; }
 
         public string ApplicationUserId { get; set; }
 
         public int SkillId { get; set; }
 
+    }
+
+    public class UserSkillUpdateDtoApi
+    {
+        public int SkillType { get; set; }
+
+        public int Proficiency { get; set; }
+
+        public string ApplicationUserId { get; set; }
+
+        public int SkillId { get; set; }
     }
 }

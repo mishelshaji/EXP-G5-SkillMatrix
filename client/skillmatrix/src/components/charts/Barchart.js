@@ -1,4 +1,6 @@
 import React from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
 import {
   PieChart,
   Pie,
@@ -12,24 +14,24 @@ import {
 } from "recharts";
 
 const BarChartApp = () => {
-    const data = [
-      {
-         name: "Facebook", 
-         users: 2000
-     },
-     { 
-        name: "Instagram",
-        users: 15000
-     },
-    { 
-        name: "Twiter", 
-        users: 10000
-    },
-    { 
-        name: "Telegram", 
-       users: 50000
-     },
-    ];
+  const [reportdata,setReportData]=useState([]);
+  console.log(reportdata);
+  useEffect(()=>{
+  axios.get("https://localhost:7227/api/Admin/Report")
+  .then((res)=>{
+   setReportData(res.data)
+   console.log(res.data);
+  })
+ },[]);
+ let modifiedarr=[];
+ reportdata.forEach(x=>
+   {
+     modifiedarr.push({
+       'name':x.skillName,
+       'users':x.count
+     })
+   })
+   console.log(modifiedarr);
   
     return (
       <div style={{ textAlign: "center" }}>
@@ -37,9 +39,9 @@ const BarChartApp = () => {
           <BarChart
             width={400}
             height={200}
-            data={data}
+            data={modifiedarr}
             margin={{
-              top: 40,
+              top: 50,
               right: 30,
               left: 80,
               bottom: 5,
@@ -55,7 +57,7 @@ const BarChartApp = () => {
             <Tooltip />
             <Legend />
             <CartesianGrid strokeDasharray="3 3" />
-            <Bar dataKey="users" fill="#8884d8" background={{ fill: "#eee" }} />
+            <Bar dataKey="users" fill="#8884d8" background={{ fill: "#fff6" }} />
           </BarChart>
         </div>
       </div>

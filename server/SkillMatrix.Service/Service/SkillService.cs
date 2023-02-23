@@ -21,6 +21,7 @@ namespace SkillMatrix.Service.Service
         public async Task<ServiceResponse<SkillViewDto[]>> GetAllasync()
         {
             var skills = await _context.Skills
+                .Where(m => m.Status == Status.Approved)
                 .Include(m => m.Category)
                 .Select(s => new SkillViewDto
                 {
@@ -154,6 +155,21 @@ namespace SkillMatrix.Service.Service
                 Category = null
             };
             return result;
+        }
+
+        public async Task<ServiceResponse<bool>> UpdatePendingAsync(int id)
+        {
+            // If the skill does not exist, return back to controller.
+            var skill = await _context.Skills.FindAsync(id);
+            if (skill == null)
+                return null;
+
+            skill.Status = Status.Approved;
+            await _context.SaveChangesAsync();
+            return new ServiceResponse<bool>
+            {
+                Result = true
+            };
         }
 
         public async Task<ServiceResponse<bool>> DeleteAsync(int id)

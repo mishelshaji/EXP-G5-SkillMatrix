@@ -13,9 +13,9 @@ namespace SkillMatrix.Domain.Models
     {
         public int Id { get; set; }
 
-        public SkillType SkillType { get; set; }
+        public SkillTypes SkillType { get; set; }
 
-        public Proficiency Proficiency { get; set; }
+        public Proficiencies Proficiency { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

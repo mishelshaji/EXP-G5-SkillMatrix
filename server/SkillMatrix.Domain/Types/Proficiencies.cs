@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SkillMatrix.Domain.Types
 {
 
-    public enum Proficiency
+    public enum Proficiencies
     {
         Beginner = 1,
         Intermediate = 2,
